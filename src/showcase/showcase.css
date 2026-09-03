@@ -1,0 +1,291 @@
+/*
+ * Showcase styles — preview-only (excluded from consumers via .dsignore).
+ * Every value comes from Web Awesome design tokens; no raw px/hex values.
+ */
+
+:root {
+  --ds-content-width: 72rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Full-bleed sections own their gutters; the main region has zero padding. */
+.ds-main {
+  padding: 0;
+}
+
+/* ---------- Chrome (header, nav, footer) ---------- */
+
+.ds-bar {
+  width: 100%;
+  padding: var(--wa-space-s) var(--wa-space-xl);
+  align-items: center;
+}
+
+.ds-brand {
+  font-family: var(--wa-font-family-heading);
+  font-size: var(--wa-font-size-l);
+  font-weight: var(--wa-font-weight-bold);
+  white-space: nowrap;
+}
+
+.ds-logo {
+  font-size: var(--wa-font-size-xl);
+  color: var(--wa-color-brand-fill-loud);
+}
+
+.ds-nav {
+  padding: var(--wa-space-l);
+}
+
+.ds-nav-label {
+  font-size: var(--wa-font-size-2xs);
+  font-weight: var(--wa-font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--wa-color-text-quiet);
+  margin-block-start: var(--wa-space-m);
+}
+
+.ds-nav a {
+  color: var(--wa-color-text-normal);
+  text-decoration: none;
+  font-size: var(--wa-font-size-s);
+  padding: var(--wa-space-3xs) var(--wa-space-xs);
+  border-radius: var(--wa-border-radius-s);
+}
+
+.ds-nav a:hover {
+  background: var(--wa-color-neutral-fill-quiet);
+}
+
+.ds-nav-foot {
+  padding: var(--wa-space-m) var(--wa-space-l);
+  font-size: var(--wa-font-size-xs);
+  color: var(--wa-color-text-quiet);
+}
+
+.ds-footer {
+  border-block-start: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  color: var(--wa-color-text-quiet);
+  font-size: var(--wa-font-size-s);
+}
+
+/* ---------- Sections ---------- */
+
+.ds-section {
+  padding: var(--wa-space-3xl) var(--wa-space-xl);
+  scroll-margin-block-start: var(--wa-space-xl);
+}
+
+.ds-section + .ds-section {
+  border-block-start: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+}
+
+.ds-section-inner {
+  max-width: var(--ds-content-width);
+  margin-inline: auto;
+}
+
+.ds-kicker {
+  font-size: var(--wa-font-size-xs);
+  font-weight: var(--wa-font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--wa-color-brand-fill-loud);
+}
+
+.ds-title {
+  font-size: var(--wa-font-size-2xl);
+  line-height: var(--wa-line-height-condensed);
+}
+
+.ds-lede {
+  color: var(--wa-color-text-quiet);
+  font-size: var(--wa-font-size-m);
+  max-width: 60ch;
+}
+
+/* ---------- Hero ---------- */
+
+.ds-hero {
+  background: var(--wa-color-brand-fill-quiet);
+  color: var(--wa-color-brand-on-quiet);
+  padding-block: var(--wa-space-4xl);
+}
+
+.ds-hero .ds-kicker {
+  color: var(--wa-color-brand-on-quiet);
+}
+
+.ds-hero-title {
+  font-size: var(--wa-font-size-4xl);
+  line-height: var(--wa-line-height-condensed);
+  max-width: 22ch;
+}
+
+.ds-hero-lede {
+  font-size: var(--wa-font-size-l);
+  max-width: 56ch;
+}
+
+.ds-code {
+  font-family: var(--wa-font-family-code);
+  font-size: var(--wa-font-size-s);
+  background: var(--wa-color-neutral-fill-quiet);
+  color: var(--wa-color-neutral-on-quiet);
+  padding: var(--wa-space-2xs) var(--wa-space-s);
+  border-radius: var(--wa-border-radius-s);
+}
+
+/* ---------- Demo panels ---------- */
+
+.ds-demo {
+  padding: var(--wa-space-l);
+  border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  border-radius: var(--wa-border-radius-l);
+  background: var(--wa-color-surface-default);
+}
+
+.ds-demo-title {
+  font-size: var(--wa-font-size-m);
+}
+
+.ds-quiet {
+  color: var(--wa-color-text-quiet);
+}
+
+/* ---------- Color swatches ---------- */
+
+.ds-swatch-grid {
+  --min-column-size: 14rem;
+}
+
+.ds-swatch {
+  padding: var(--wa-space-s) var(--wa-space-m);
+  border-radius: var(--wa-border-radius-m);
+  border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+}
+
+.ds-swatch-name {
+  font-weight: var(--wa-font-weight-semibold);
+  font-size: var(--wa-font-size-s);
+}
+
+.ds-swatch-token {
+  font-family: var(--wa-font-family-code);
+  font-size: var(--wa-font-size-2xs);
+  opacity: 0.85;
+}
+
+.ds-palette-row {
+  display: grid;
+  grid-template-columns: minmax(5rem, 7rem) repeat(11, 1fr);
+  gap: var(--wa-space-3xs);
+  align-items: center;
+}
+
+.ds-palette-hue {
+  font-family: var(--wa-font-family-code);
+  font-size: var(--wa-font-size-xs);
+  color: var(--wa-color-text-quiet);
+}
+
+.ds-palette-cell {
+  aspect-ratio: 1;
+  border-radius: var(--wa-border-radius-s);
+  border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+}
+
+/* ---------- Typography and scale specimens ---------- */
+
+.ds-row-grid {
+  display: grid;
+  grid-template-columns: minmax(8rem, 12rem) 1fr;
+  gap: var(--wa-space-m);
+  align-items: baseline;
+}
+
+.ds-row-label {
+  font-family: var(--wa-font-family-code);
+  font-size: var(--wa-font-size-xs);
+  color: var(--wa-color-text-quiet);
+}
+
+.ds-space-bar {
+  height: var(--wa-space-m);
+  background: var(--wa-color-brand-fill-loud);
+  border-radius: var(--wa-border-radius-pill);
+}
+
+.ds-radius-tile {
+  width: var(--wa-space-4xl);
+  height: var(--wa-space-4xl);
+  background: var(--wa-color-brand-fill-quiet);
+  border: var(--wa-border-width-m) solid var(--wa-color-brand-border-loud);
+}
+
+.ds-shadow-tile {
+  width: calc(var(--wa-space-4xl) * 2);
+  padding: var(--wa-space-l);
+  background: var(--wa-color-surface-raised);
+  border-radius: var(--wa-border-radius-m);
+  text-align: center;
+  font-family: var(--wa-font-family-code);
+  font-size: var(--wa-font-size-xs);
+  color: var(--wa-color-text-quiet);
+}
+
+/* ---------- Icons ---------- */
+
+.ds-icon-grid {
+  --min-column-size: 7rem;
+}
+
+.ds-icon-cell {
+  padding: var(--wa-space-m);
+  border-radius: var(--wa-border-radius-m);
+  border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  text-align: center;
+}
+
+.ds-icon-cell wa-icon {
+  font-size: var(--wa-font-size-xl);
+}
+
+.ds-icon-name {
+  display: block;
+  margin-block-start: var(--wa-space-xs);
+  font-family: var(--wa-font-family-code);
+  font-size: var(--wa-font-size-2xs);
+  color: var(--wa-color-text-quiet);
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Forms ---------- */
+
+.ds-form-grid {
+  --min-column-size: 20rem;
+}
+
+/* ---------- Display ---------- */
+
+.ds-card-grid {
+  --min-column-size: 18rem;
+  align-items: start;
+}
+
+.ds-media-ph {
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(
+    135deg,
+    var(--wa-color-indigo-90),
+    var(--wa-color-blue-70)
+  );
+  color: var(--wa-color-indigo-30);
+  font-size: var(--wa-font-size-3xl);
+}
