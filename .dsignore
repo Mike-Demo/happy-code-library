@@ -1,0 +1,2 @@
+# Preview-only showcase sections (rendered by src/routes/, which is excluded by default)
+src/showcase/**

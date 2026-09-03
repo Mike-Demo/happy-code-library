@@ -1,9 +1,10 @@
-* {
+/* App-level styles for the showcase preview app.
+   Web Awesome's native.css (loaded via the design system theme) handles
+   base element styling; only page-shell resets live here. */
+
+html,
+body {
+  min-height: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: system-ui, -apple-system, sans-serif;
 }

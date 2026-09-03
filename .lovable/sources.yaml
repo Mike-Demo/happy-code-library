@@ -1,0 +1,12 @@
+components:
+  # Generated JSX typings import every component class and declare the full
+  # <wa-*> tag map — the richest single declaration file in the package.
+  - file: node_modules/@awesome.me/webawesome/dist/custom-elements-jsx.d.ts
+    operation: dts-types
+tokens:
+  # Default theme: semantic tokens (surface, text, spacing, radius, shadow, typography).
+  - file: node_modules/@awesome.me/webawesome/dist/styles/themes/default.css
+    operation: css-variables
+  # Default color palette: the full --wa-color-* scales.
+  - file: node_modules/@awesome.me/webawesome/dist/styles/color/palettes/default.css
+    operation: css-variables
