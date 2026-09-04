@@ -9,6 +9,7 @@
 /* ---------- Standard footer ---------- */
 
 .wa-site-footer {
+  inline-size: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

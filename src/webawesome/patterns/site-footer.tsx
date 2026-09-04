@@ -51,6 +51,8 @@ export interface SiteFooterProps {
    */
   readonly year?: number;
   readonly className?: string;
+  /** Slot name, e.g. "footer" when placed inside <wa-page>. */
+  readonly slot?: string;
 }
 
 /**
@@ -64,6 +66,7 @@ export function SiteFooter({
   socialLinks = DEFAULT_SOCIAL_LINKS,
   year,
   className,
+  slot,
 }: SiteFooterProps): ReactElement {
   const [resolvedYear, setResolvedYear] = useState<number | undefined>(year);
 
@@ -72,7 +75,7 @@ export function SiteFooter({
   }, [year]);
 
   return (
-    <footer className={className ? `wa-site-footer ${className}` : "wa-site-footer"}>
+    <footer slot={slot} className={className ? `wa-site-footer ${className}` : "wa-site-footer"}>
       <div className="wa-site-footer-meta">
         <span>{madeBy}</span>
         {resolvedYear === undefined ? null : (
