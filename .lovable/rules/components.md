@@ -2,6 +2,57 @@
 
 Component catalog for **Font Awsome & Web Awesome**. Import all components from `@ws-q44iemhjvr3azhdcenod/9fea97bb-e317-446f-b683-1274350846c6`.
 
+### HCaptcha
+
+```ts
+import { HCaptcha } from "@ws-q44iemhjvr3azhdcenod/9fea97bb-e317-446f-b683-1274350846c6"
+```
+
+Bot protection for sign-up, login, password reset, and public contact forms. Renders hCaptcha's widget themed to the design system and writes the token into a hidden field so a plain form submit carries it; verify that token server-side before trusting the submission.
+
+**Props:**
+
+| Prop | Type | Default |
+|---|---|---|
+| `siteKey` | string | `—` |
+| `size` | normal · compact · invisible | `normal` |
+| `theme` | light · dark · auto | `auto` |
+| `hl` | string | `—` |
+| `name` | string | `h-captcha-response` |
+| `onVerify` | function | `—` |
+| `onExpire` | function | `—` |
+| `onError` | function | `—` |
+| `onChallengeOpen` | function | `—` |
+| `onChallengeClose` | function | `—` |
+| `className` | string | `wa-hcaptcha-widget` |
+| `id` | string | `—` |
+
+**Examples:**
+
+_Contact form with a visible challenge_
+```tsx
+<form method="post" action="/api/public/contact">
+  <wa-input name="email" label="Email" type="email" required></wa-input>
+  <HCaptcha siteKey={import.meta.env.VITE_HCAPTCHA_SITE_KEY} />
+  <wa-button type="submit" variant="brand">Send</wa-button>
+</form>
+```
+
+_Invisible challenge run from your own button_
+```tsx
+const captcha = useRef<HCaptchaHandle>(null);
+
+<HCaptcha ref={captcha} size="invisible" siteKey={siteKey} onVerify={(token) => submit(token)} />
+<wa-button variant="brand" onClick={() => captcha.current?.execute()}>Create account</wa-button>
+```
+
+**Avoid:**
+
+- Trusting the token client-side, or gating a submit purely on onVerify without a server check.
+- Putting the hCaptcha secret key in client code or in the siteKey prop.
+- Adding hCaptcha's api.js with a <script> tag or hand-rolling the widget instead of using this component.
+- Using size="invisible" without calling execute() — no challenge ever runs.
+
 ### LicensesPage
 
 ```ts

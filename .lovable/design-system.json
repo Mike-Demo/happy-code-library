@@ -1,8 +1,8 @@
 {
   "meta": {
-    "name": "Font Awsome & Web Awesome",
+    "name": "Font Awsome \u0026 Web Awesome",
     "package": "@ws-q44iemhjvr3azhdcenod/9fea97bb-e317-446f-b683-1274350846c6",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "framework": "react",
     "css_framework": "css-variables",
     "component_library": "webawesome",
@@ -13,15 +13,16 @@
     ],
     "source_type": "local",
     "source_manifest": {
-      "#enrichment": "8782ea455c647e5bcca50a8f2d45d6886e84f32b962ce533b90989c986a76b7b",
+      "#enrichment": "5875dc2f89c3779c17be5b25361d6b75068c34a75c2f7c0213e1987c279ba3b5",
       ".dsignore": "95d578405064fa482cd47c5d7addefb9",
       ".gitignore": "6059213806e442947666752f3db6bfdc",
       ".lovable/meta.yaml": "6040da3ba0ce8089d3a289225b27b718",
+      ".lovable/plan/add-hcaptcha-as-a-component-2026-09-04.md": "da4af5c5d67fac716faa58bb98b0c7db",
       ".lovable/plan/convert-to-a-local-cdn-backed-design-system-2026-09-04.md": "415a908b7120b053dd4766122607c608",
       ".lovable/plan/optional-ssr-and-cdn-support-for-the-web-awesome-design-syst-2026-09-04.md": "b5f2dd41638c022a8d790cb890cfde3a",
       ".lovable/plan/standard-footer-open-source-license-page-2026-09-04.md": "621e4842bc14ed09b0e98c66803d04ba",
       ".lovable/sources.yaml": "e31fd2b129e0dbcfa0c11d6b2acefab4",
-      ".lovable/system.md": "1574d6089c7cac1bd19a507fd014f094",
+      ".lovable/system.md": "b32deb0b9986842dd15a54d857d81fa3",
       "README.md": "d19675c449605f23c7cfa133c69b398b",
       "bunfig.toml": "25f4c8696b22b0943db7191e0cdf7942",
       "eslint.config.js": "07a67437fb1a45ab36d6de0145ff09de",
@@ -31,7 +32,7 @@
       "public/favicon.ico": "9f504444f85a5af2eef9264b02ae40be",
       "public/showcase/gradient.gif": "cc9f538bd7391e7ea9e2cb09be7646d5",
       "public/showcase/include-demo.html": "df3b6f70b3d2b494b3c446f668d21c67",
-      "roadmap.md": "9ddd259e7fb29cacf497e93e92ee4024",
+      "roadmap.md": "c2574517579c77c54e92a48395c053c6",
       "scripts/build-vendor.ts": "f0542692af66a6386d8789b0aad3bc66",
       "scripts/vendor-entry.js": "767ad302cec2dc25434e86ef347bccfc",
       "scripts/vendor-entry.ssr.js": "739d41733d792e985bac97fbea69844e",
@@ -50,8 +51,8 @@
       "src/routes/licenses.tsx": "9f991bae09bb0b57d242b501b7dddddc",
       "src/routes/scale.tsx": "2248f3d2dcb66bbe00228bb9a9bc9149",
       "src/routes/typography.tsx": "632f7c1296cbc63422c1c0411a1e1fd7",
-      "src/showcase/component-registry.ts": "2d8c35d08c8689c767dd552d7e2a4656",
-      "src/showcase/components-page.tsx": "ea7fc5946100d27d6d4d87ec0303f348",
+      "src/showcase/component-registry.ts": "6aa9a3badb536377cce1da7af240cb45",
+      "src/showcase/components-page.tsx": "516386b0d8a8328f85564472837281ec",
       "src/showcase/delivery.tsx": "5fc1347c8df6e67ade0fe342760c602c",
       "src/showcase/foundations.tsx": "6983f24576db5c7d52f237f0eaeea874",
       "src/showcase/icon-index.ts": "8f2b5dcc0d5e0e02388fc75f5dc1550d",
@@ -61,7 +62,7 @@
       "src/showcase/sections/data.tsx": "a53bed5dc655ffb123f27c41ceb8dcbe",
       "src/showcase/sections/display.tsx": "920aaefa3ae0f8ffa7e21463a241a6d5",
       "src/showcase/sections/feedback.tsx": "cdb8621abec3818e394eea2b5f3d8ade",
-      "src/showcase/sections/forms.tsx": "83ae75aca5eb0f4b7a5c998152dad86a",
+      "src/showcase/sections/forms.tsx": "e292970115882649f63f4b8579acf777",
       "src/showcase/sections/navigation.tsx": "364251bcc42405db397ee731b6447e62",
       "src/showcase/sections/overlays.tsx": "d2b4fb60939288812997bbaac71fa666",
       "src/showcase/sections/utilities.tsx": "f61b67dcdec453a8013285a0fa29920b",
@@ -71,9 +72,10 @@
       "src/styles.css": "ee6a5eab0a170ce2f071b1fda3daac1b",
       "src/webawesome/cdn.ts": "864a39161ad8d48c1acbe27803e58e0f",
       "src/webawesome/index.ts": "09bac37e034be69193641cca647e4826",
-      "src/webawesome/patterns/index.ts": "ee4c04e1c1fe8a22b122ff7bd4156350",
-      "src/webawesome/patterns/licenses.tsx": "c360ac1f7749b14424bd415b7d050f72",
-      "src/webawesome/patterns/patterns.css": "5ca74b27600ccc110e232f971e717a40",
+      "src/webawesome/patterns/hcaptcha.tsx": "1d02f0a201718d97e422812d0cab6507",
+      "src/webawesome/patterns/index.ts": "a0b3495a95ca439364090295a8bd8478",
+      "src/webawesome/patterns/licenses.tsx": "af44f6f7432861b32ee95a4e6044caf5",
+      "src/webawesome/patterns/patterns.css": "f57431cf3de95fd4a6d6efc62832a571",
       "src/webawesome/patterns/site-footer.tsx": "e9a6141ba7fc2c0d25e52573270667cc",
       "src/webawesome/react/accordion-item.tsx": "583e3c3c62dfdb7f3b5c1aeeb3fc0d26",
       "src/webawesome/react/accordion.tsx": "58f4b8151944a33e9bad3419f08d8906",
@@ -5575,7 +5577,7 @@
         {
           "name": "heading",
           "type": "string",
-          "default": "Open source & credits"
+          "default": "Open source \u0026 credits"
         },
         {
           "name": "lede",
@@ -5664,7 +5666,8 @@
         },
         {
           "name": "className",
-          "type": "string"
+          "type": "string",
+          "default": "wa-hcaptcha-widget"
         },
         {
           "name": "id",
@@ -5675,18 +5678,18 @@
       "examples": [
         {
           "label": "Contact form with a visible challenge",
-          "code": "<form method=\"post\" action=\"/api/public/contact\">\n  <wa-input name=\"email\" label=\"Email\" type=\"email\" required></wa-input>\n  <HCaptcha siteKey={import.meta.env.VITE_HCAPTCHA_SITE_KEY} />\n  <wa-button type=\"submit\" variant=\"brand\">Send</wa-button>\n</form>"
+          "code": "\u003cform method=\"post\" action=\"/api/public/contact\"\u003e\n  \u003cwa-input name=\"email\" label=\"Email\" type=\"email\" required\u003e\u003c/wa-input\u003e\n  \u003cHCaptcha siteKey={import.meta.env.VITE_HCAPTCHA_SITE_KEY} /\u003e\n  \u003cwa-button type=\"submit\" variant=\"brand\"\u003eSend\u003c/wa-button\u003e\n\u003c/form\u003e"
         },
         {
           "label": "Invisible challenge run from your own button",
-          "code": "const captcha = useRef<HCaptchaHandle>(null);\n\n<HCaptcha ref={captcha} size=\"invisible\" siteKey={siteKey} onVerify={(token) => submit(token)} />\n<wa-button variant=\"brand\" onClick={() => captcha.current?.execute()}>Create account</wa-button>"
+          "code": "const captcha = useRef\u003cHCaptchaHandle\u003e(null);\n\n\u003cHCaptcha ref={captcha} size=\"invisible\" siteKey={siteKey} onVerify={(token) =\u003e submit(token)} /\u003e\n\u003cwa-button variant=\"brand\" onClick={() =\u003e captcha.current?.execute()}\u003eCreate account\u003c/wa-button\u003e"
         }
       ],
       "antipatterns": [
         "Trusting the token client-side, or gating a submit purely on onVerify without a server check.",
         "Putting the hCaptcha secret key in client code or in the siteKey prop.",
-        "Adding hCaptcha's api.js with a <script> tag or hand-rolling the widget instead of using this component.",
-        "Using size=\"invisible\" without calling execute() \u2014 no challenge ever runs."
+        "Adding hCaptcha's api.js with a \u003cscript\u003e tag or hand-rolling the widget instead of using this component.",
+        "Using size=\"invisible\" without calling execute() — no challenge ever runs."
       ]
     }
   ]
