@@ -1,6 +1,7 @@
 // Component docs: form controls group. Preview-only.
-import type { ReactElement } from "react";
+import { useRef, useState, type ReactElement } from "react";
 
+import { HCaptcha, HCAPTCHA_TEST_SITE_KEY, type HCaptchaHandle } from "../../webawesome/patterns";
 import { ComponentDoc, Specimen } from "../ui";
 
 export function InputDoc(): ReactElement {
@@ -386,5 +387,67 @@ export function FormsInContext(): ReactElement {
         </div>
       </wa-card>
     </section>
+  );
+}
+
+/** hCaptcha: not a Web Awesome element — a design-system pattern component. */
+export function HCaptchaDoc(): ReactElement {
+  const invisibleRef = useRef<HCaptchaHandle | null>(null);
+  const [status, setStatus] = useState("Not verified yet.");
+
+  return (
+    <ComponentDoc
+      tag="hcaptcha"
+      title="hCaptcha"
+      summary="Bot protection for sign-up, login, and contact forms. Renders hCaptcha's widget with the design system's spacing and color scheme, and drops the token into a hidden field so a plain form submit carries it. The token proves nothing on its own — always verify it on the server with your secret key."
+      code={`import { HCaptcha, type HCaptchaHandle } from "@/design-system/webawesome";
+
+// Visible checkbox widget inside a form
+<form method="post" action="/api/public/contact">
+  <wa-input name="email" label="Email" type="email" required></wa-input>
+  <HCaptcha siteKey={import.meta.env.VITE_HCAPTCHA_SITE_KEY} />
+  <wa-button type="submit" variant="brand">Send</wa-button>
+</form>
+
+// Invisible mode — run the challenge from your own button
+const captcha = useRef<HCaptchaHandle>(null);
+<HCaptcha
+  ref={captcha}
+  size="invisible"
+  siteKey={import.meta.env.VITE_HCAPTCHA_SITE_KEY}
+  onVerify={(token) => submit(token)}
+/>
+<wa-button variant="brand" onClick={() => captcha.current?.execute()}>
+  Create account
+</wa-button>`}
+    >
+      <div className="wa-grid ds-form-grid wa-gap-l">
+        <Specimen label="visible widget (hCaptcha test key)">
+          <HCaptcha siteKey={HCAPTCHA_TEST_SITE_KEY} />
+        </Specimen>
+        <Specimen label="invisible, triggered by a button">
+          <div className="wa-stack wa-gap-s">
+            <HCaptcha
+              ref={invisibleRef}
+              size="invisible"
+              siteKey={HCAPTCHA_TEST_SITE_KEY}
+              onVerify={() => setStatus("Verified — token issued.")}
+              onExpire={() => setStatus("Token expired.")}
+              onError={() => setStatus("Challenge failed.")}
+            />
+            <wa-button variant="brand" onClick={() => invisibleRef.current?.execute()}>
+              Verify me
+            </wa-button>
+            <span className="ds-quiet">{status}</span>
+          </div>
+        </Specimen>
+      </div>
+      <wa-callout variant="warning">
+        <wa-icon slot="icon" name="shield-halved"></wa-icon>
+        Send the token to your server and check it against
+        <code> https://api.hcaptcha.com/siteverify </code>
+        with your secret key. Never put the secret key in client code.
+      </wa-callout>
+    </ComponentDoc>
   );
 }
