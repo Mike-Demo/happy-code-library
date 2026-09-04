@@ -5,7 +5,9 @@
     "**/*.css",
     "**/components.ts",
     "**/setup.tsx",
-    "**/icon-library.ts"
+    "**/icon-library.ts",
+    "src/index.ts",
+    "src/webawesome/index.ts"
   ],
   "type": "module",
   "scripts": {
