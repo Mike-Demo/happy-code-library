@@ -122,7 +122,7 @@ export function OverviewPage(): ReactElement {
           <div className="wa-grid ds-page-grid wa-gap-l">
             {PAGES.map((page) => (
               <Link key={page.to} to={page.to} className="ds-page-card-link">
-                <wa-card class="ds-page-card">
+                <wa-card className="ds-page-card">
                   <div className="wa-stack wa-gap-s">
                     <wa-icon name={page.icon} className="ds-page-card-icon"></wa-icon>
                     <strong>{page.title}</strong>

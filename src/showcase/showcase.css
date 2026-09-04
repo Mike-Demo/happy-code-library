@@ -289,3 +289,387 @@ html {
   color: var(--wa-color-indigo-30);
   font-size: var(--wa-font-size-3xl);
 }
+
+/* ---------- Shell navigation ---------- */
+
+.ds-brand-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ds-nav a.ds-active {
+  background: var(--wa-color-brand-fill-quiet);
+  color: var(--wa-color-brand-on-quiet);
+  font-weight: var(--wa-font-weight-semibold);
+}
+
+/* ---------- Overview ---------- */
+
+.ds-section-alt {
+  background: var(--wa-color-surface-lowered);
+}
+
+.ds-stats {
+  --min-column-size: 10rem;
+  margin-block-start: var(--wa-space-l);
+}
+
+.ds-stat {
+  display: grid;
+  gap: var(--wa-space-3xs);
+  padding: var(--wa-space-m);
+  border-radius: var(--wa-border-radius-m);
+  background: var(--wa-color-surface-raised);
+  border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  box-shadow: var(--wa-shadow-s);
+}
+
+.ds-stat-value {
+  font-family: var(--wa-font-family-heading);
+  font-size: var(--wa-font-size-2xl);
+  font-weight: var(--wa-font-weight-bold);
+  line-height: var(--wa-line-height-condensed);
+}
+
+.ds-stat-label {
+  font-size: var(--wa-font-size-xs);
+  color: var(--wa-color-text-quiet);
+}
+
+.ds-page-grid {
+  --min-column-size: 16rem;
+  align-items: stretch;
+}
+
+.ds-page-card-link {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  height: 100%;
+}
+
+.ds-page-card {
+  height: 100%;
+}
+
+.ds-page-card-link:hover .ds-page-card::part(base) {
+  border-color: var(--wa-color-brand-border-loud);
+  box-shadow: var(--wa-shadow-m);
+}
+
+.ds-page-card-icon {
+  font-size: var(--wa-font-size-xl);
+  color: var(--wa-color-brand-fill-loud);
+}
+
+.ds-page-card-cta {
+  color: var(--wa-color-text-link);
+  font-size: var(--wa-font-size-s);
+  font-weight: var(--wa-font-weight-semibold);
+}
+
+.ds-principle {
+  padding: var(--wa-space-l);
+  border-radius: var(--wa-border-radius-l);
+  background: var(--wa-color-surface-default);
+  border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+}
+
+/* ---------- Component docs ---------- */
+
+.ds-comp {
+  scroll-margin-block-start: var(--wa-space-xl);
+}
+
+.ds-comp-title {
+  font-size: var(--wa-font-size-l);
+}
+
+.ds-group-title {
+  font-size: var(--wa-font-size-xl);
+}
+
+.ds-comp-summary {
+  color: var(--wa-color-text-quiet);
+  max-width: 70ch;
+}
+
+.ds-chip {
+  font-family: var(--wa-font-family-code);
+  font-size: var(--wa-font-size-2xs);
+  background: var(--wa-color-brand-fill-quiet);
+  color: var(--wa-color-brand-on-quiet);
+  padding: var(--wa-space-3xs) var(--wa-space-2xs);
+  border-radius: var(--wa-border-radius-s);
+}
+
+.ds-chip-quiet {
+  background: var(--wa-color-neutral-fill-quiet);
+  color: var(--wa-color-neutral-on-quiet);
+}
+
+.ds-specimen-label {
+  font-size: var(--wa-font-size-2xs);
+  font-weight: var(--wa-font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--wa-color-text-quiet);
+}
+
+.ds-caption {
+  font-size: var(--wa-font-size-xs);
+  color: var(--wa-color-text-quiet);
+  font-family: var(--wa-font-family-code);
+}
+
+.ds-code-block {
+  position: relative;
+  background: var(--wa-color-neutral-fill-quiet);
+  border-radius: var(--wa-border-radius-m);
+  padding: var(--wa-space-m) var(--wa-space-3xl) var(--wa-space-m) var(--wa-space-m);
+}
+
+.ds-code-block pre {
+  overflow-x: auto;
+  font-family: var(--wa-font-family-code);
+  font-size: var(--wa-font-size-s);
+  color: var(--wa-color-neutral-on-quiet);
+}
+
+.ds-code-block wa-copy-button {
+  position: absolute;
+  inset-block-start: var(--wa-space-2xs);
+  inset-inline-end: var(--wa-space-2xs);
+}
+
+/* ---------- Components page layout ---------- */
+
+.ds-comp-layout {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: var(--wa-space-2xl);
+  align-items: start;
+}
+
+.ds-comp-sidebar {
+  position: sticky;
+  top: var(--wa-space-l);
+  display: grid;
+  gap: var(--wa-space-s);
+  max-height: calc(100vh - var(--wa-space-4xl));
+  overflow: hidden;
+}
+
+.ds-comp-index {
+  overflow-y: auto;
+  padding-inline-end: var(--wa-space-2xs);
+}
+
+.ds-index-link {
+  border: none;
+  background: transparent;
+  text-align: start;
+  cursor: pointer;
+  color: var(--wa-color-text-normal);
+  font-size: var(--wa-font-size-s);
+  font-family: var(--wa-font-family-body);
+  padding: var(--wa-space-3xs) var(--wa-space-xs);
+  border-radius: var(--wa-border-radius-s);
+}
+
+.ds-index-link:hover {
+  background: var(--wa-color-neutral-fill-quiet);
+}
+
+.ds-index-link:focus-visible {
+  outline: var(--wa-focus-ring);
+  outline-offset: var(--wa-focus-ring-offset);
+}
+
+@media (max-width: 60rem) {
+  .ds-comp-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ds-comp-sidebar {
+    position: static;
+    max-height: none;
+  }
+
+  .ds-comp-index {
+    max-height: 14rem;
+  }
+}
+
+/* ---------- Icon grid ---------- */
+
+.ds-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+  gap: var(--wa-space-xs);
+}
+
+.ds-icon-cell {
+  background: var(--wa-color-surface-default);
+  cursor: pointer;
+  font-family: var(--wa-font-family-body);
+  color: var(--wa-color-text-normal);
+  content-visibility: auto;
+  contain-intrinsic-size: auto 6rem;
+}
+
+.ds-icon-cell:hover {
+  border-color: var(--wa-color-brand-border-loud);
+  background: var(--wa-color-brand-fill-quiet);
+}
+
+.ds-icon-cell:focus-visible {
+  outline: var(--wa-focus-ring);
+  outline-offset: var(--wa-focus-ring-offset);
+}
+
+/* ---------- Specimen props (display & media) ---------- */
+
+.ds-slide {
+  display: grid;
+  place-items: center;
+  gap: var(--wa-space-xs);
+  block-size: 8rem;
+  inline-size: 100%;
+  background: var(--wa-color-brand-fill-quiet);
+  color: var(--wa-color-brand-on-quiet);
+  border-radius: var(--wa-border-radius-m);
+  font-weight: var(--wa-font-weight-semibold);
+}
+
+.ds-compare {
+  display: grid;
+  place-items: center;
+  block-size: 9rem;
+  inline-size: 100%;
+  font-weight: var(--wa-font-weight-semibold);
+}
+
+.ds-compare-before {
+  background: var(--wa-color-gray-95);
+  color: var(--wa-color-gray-10);
+}
+
+.ds-compare-after {
+  background: var(--wa-color-gray-10);
+  color: var(--wa-color-gray-95);
+}
+
+.ds-pane {
+  display: grid;
+  place-items: center;
+  block-size: 100%;
+  background: var(--wa-color-neutral-fill-quiet);
+  color: var(--wa-color-neutral-on-quiet);
+  font-size: var(--wa-font-size-s);
+}
+
+/* ---------- Page miniature ---------- */
+
+.ds-page-mini {
+  inline-size: 100%;
+  max-inline-size: 22rem;
+  border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  border-radius: var(--wa-border-radius-m);
+  overflow: hidden;
+  font-size: var(--wa-font-size-2xs);
+  font-family: var(--wa-font-family-code);
+  color: var(--wa-color-text-quiet);
+}
+
+.ds-page-mini-header,
+.ds-page-mini-footer {
+  padding: var(--wa-space-2xs) var(--wa-space-s);
+  background: var(--wa-color-surface-raised);
+}
+
+.ds-page-mini-header {
+  border-block-end: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+}
+
+.ds-page-mini-footer {
+  border-block-start: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+}
+
+.ds-page-mini-body {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  min-block-size: 6rem;
+}
+
+.ds-page-mini-nav {
+  padding: var(--wa-space-s);
+  background: var(--wa-color-surface-lowered);
+  border-inline-end: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+}
+
+.ds-page-mini-main {
+  padding: var(--wa-space-s);
+}
+
+/* ---------- Popup & observers ---------- */
+
+.ds-popup-demo {
+  padding: var(--wa-space-3xl) var(--wa-space-xl) var(--wa-space-m);
+}
+
+.ds-popup-anchor {
+  display: inline-block;
+  padding: var(--wa-space-2xs) var(--wa-space-m);
+  border: var(--wa-border-width-s) dashed var(--wa-color-neutral-border-normal);
+  border-radius: var(--wa-border-radius-s);
+  color: var(--wa-color-text-quiet);
+}
+
+.ds-popup-panel {
+  background: var(--wa-color-neutral-fill-loud);
+  color: var(--wa-color-neutral-on-loud);
+  padding: var(--wa-space-2xs) var(--wa-space-s);
+  border-radius: var(--wa-border-radius-s);
+  font-size: var(--wa-font-size-xs);
+}
+
+.ds-observer-scroll {
+  block-size: 9rem;
+  inline-size: 100%;
+  max-inline-size: 24rem;
+  overflow-y: auto;
+  border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  border-radius: var(--wa-border-radius-m);
+}
+
+.ds-observer-spacer {
+  block-size: 12rem;
+  display: grid;
+  place-items: center;
+  color: var(--wa-color-text-quiet);
+  font-size: var(--wa-font-size-s);
+}
+
+.ds-observer-target {
+  margin: var(--wa-space-m);
+  padding: var(--wa-space-l);
+  text-align: center;
+  background: var(--wa-color-success-fill-quiet);
+  color: var(--wa-color-success-on-quiet);
+  border-radius: var(--wa-border-radius-m);
+}
+
+.ds-resizable {
+  resize: both;
+  overflow: auto;
+  min-inline-size: 14rem;
+  max-inline-size: 100%;
+  padding: var(--wa-space-s);
+  border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  border-radius: var(--wa-border-radius-s);
+  font-family: var(--wa-font-family-body);
+  font-size: var(--wa-font-size-s);
+  background: var(--wa-color-surface-default);
+  color: var(--wa-color-text-normal);
+}
