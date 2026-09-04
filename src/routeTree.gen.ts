@@ -13,6 +13,7 @@ import { Route as TypographyRouteImport } from './routes/typography'
 import { Route as ScaleRouteImport } from './routes/scale'
 import { Route as LicensesRouteImport } from './routes/licenses'
 import { Route as IconsRouteImport } from './routes/icons'
+import { Route as DeliveryRouteImport } from './routes/delivery'
 import { Route as ComponentsRouteImport } from './routes/components'
 import { Route as ColorsRouteImport } from './routes/colors'
 import { Route as IndexRouteImport } from './routes/index'
@@ -37,6 +38,11 @@ const LicensesRoute = LicensesRouteImport.update({
 const IconsRoute = IconsRouteImport.update({
   id: '/icons',
   path: '/icons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeliveryRoute = DeliveryRouteImport.update({
+  id: '/delivery',
+  path: '/delivery',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ComponentsRoute = ComponentsRouteImport.update({
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
+  '/delivery': typeof DeliveryRoute
   '/icons': typeof IconsRoute
   '/licenses': typeof LicensesRoute
   '/scale': typeof ScaleRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
+  '/delivery': typeof DeliveryRoute
   '/icons': typeof IconsRoute
   '/licenses': typeof LicensesRoute
   '/scale': typeof ScaleRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
+  '/delivery': typeof DeliveryRoute
   '/icons': typeof IconsRoute
   '/licenses': typeof LicensesRoute
   '/scale': typeof ScaleRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/colors'
     | '/components'
+    | '/delivery'
     | '/icons'
     | '/licenses'
     | '/scale'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/'
     | '/colors'
     | '/components'
+    | '/delivery'
     | '/icons'
     | '/licenses'
     | '/scale'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/'
     | '/colors'
     | '/components'
+    | '/delivery'
     | '/icons'
     | '/licenses'
     | '/scale'
@@ -141,6 +153,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ColorsRoute: typeof ColorsRoute
   ComponentsRoute: typeof ComponentsRoute
+  DeliveryRoute: typeof DeliveryRoute
   IconsRoute: typeof IconsRoute
   LicensesRoute: typeof LicensesRoute
   ScaleRoute: typeof ScaleRoute
@@ -177,6 +190,13 @@ declare module '@tanstack/react-router' {
       path: '/icons'
       fullPath: '/icons'
       preLoaderRoute: typeof IconsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/delivery': {
+      id: '/delivery'
+      path: '/delivery'
+      fullPath: '/delivery'
+      preLoaderRoute: typeof DeliveryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/components': {
@@ -221,6 +241,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ColorsRoute: ColorsRoute,
   ComponentsRoute: ComponentsRoute,
+  DeliveryRoute: DeliveryRoute,
   IconsRoute: IconsRoute,
   LicensesRoute: LicensesRoute,
   ScaleRoute: ScaleRoute,

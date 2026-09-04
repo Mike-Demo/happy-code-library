@@ -32,3 +32,13 @@
  * No brand overrides are defined yet; the system ships the stock
  * Web Awesome default theme until brand colors are chosen.
  */
+
+/*
+ * SSR mode only (WebAwesomeLoader hydrate → <html data-wa-ssr>).
+ * Server-rendered elements carry did-ssr and already show an approximation of
+ * their final markup; anything that was not server-rendered would flash
+ * unstyled light DOM, so it stays hidden until its definition arrives.
+ */
+html[data-wa-ssr] :not([did-ssr]):not(:defined) {
+  visibility: hidden;
+}

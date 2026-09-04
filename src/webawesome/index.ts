@@ -19,5 +19,19 @@ export {
   WEB_AWESOME_VERSION,
   FONT_AWESOME_VERSION,
 } from "./setup";
+export type { WebAwesomeLoaderProps } from "./setup";
+// Opt-in CDN delivery. The server-rendering helper is deliberately NOT
+// exported here: it needs npm packages at runtime and must stay out of
+// browser bundles — import ./ssr/render.server directly from server code.
+export {
+  loadWebAwesomeFromCdn,
+  FONT_AWESOME_ICON_PATH,
+  FONT_AWESOME_STYLE_URL,
+  WEB_AWESOME_LOADER_URL,
+  WEB_AWESOME_SSR_LOADER_URL,
+  WEB_AWESOME_STYLE_URL,
+} from "./cdn";
+export type { CdnLoadOptions } from "./cdn";
 export * from "./react";
 export * from "./patterns";
+

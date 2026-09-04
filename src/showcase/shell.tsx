@@ -16,6 +16,7 @@ const FOUNDATION_LINKS = [
 const LIBRARY_LINKS = [
   { to: "/icons", label: "Icons" },
   { to: "/components", label: "Components" },
+  { to: "/delivery", label: "Delivery & SSR" },
   { to: "/licenses", label: "Open source" },
 ] as const;
 
