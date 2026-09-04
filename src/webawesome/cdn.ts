@@ -3,27 +3,46 @@
  *
  * By default this design system registers custom elements from the vendored
  * bundle in ./vendor, so nothing is fetched from a third party at runtime.
- * CDN mode is the alternative: the browser loads Web Awesome's own loader from
- * a version-pinned CDN, which then autoloads each element on demand.
+ * CDN mode is the alternative: the browser loads Web Awesome's own autoloader
+ * from a version-pinned CDN, which then registers each element on demand.
  *
  *   Bundle mode  — no network dependency, one larger JS file up front.
  *   CDN mode     — smaller app payload, lazily loaded elements, but the page
  *                  depends on the CDN being reachable.
  *
- * Stylesheets always come from the same pinned CDN (see ./theme.css); the URLs
- * are exported here too for projects that prefer <link> tags in the document
- * head over a CSS import.
+ * Two CDNs are in play, deliberately:
+ *
+ *   Stylesheets come from jsDelivr, which serves the published files verbatim
+ *   (see ./theme.css). The URLs are exported here too, for projects that
+ *   prefer <link> tags in the document head over the CSS import.
+ *
+ *   JavaScript comes from esm.sh, which rewrites the package's bare imports
+ *   into resolvable URLs. Web Awesome's published modules import bare
+ *   specifiers (@shoelace-style/animations, @shoelace-style/localize, Lit's
+ *   SSR client), so loading them straight off jsDelivr fails in the browser
+ *   with "Failed to resolve module specifier" unless the page ships an
+ *   import map for every one of them.
  */
-import { FONT_AWESOME_VERSION, WEB_AWESOME_CDN, WEB_AWESOME_VERSION } from "./setup";
+import { FONT_AWESOME_VERSION, WEB_AWESOME_VERSION } from "./setup";
 
 /** Font Awesome Free CDN root for the pinned release. */
 export const FONT_AWESOME_CDN = `https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@${FONT_AWESOME_VERSION}`;
 
+/** jsDelivr root for Web Awesome's published files (stylesheets). */
+export const WEB_AWESOME_ASSET_CDN = `https://cdn.jsdelivr.net/npm/@awesome.me/webawesome@${WEB_AWESOME_VERSION}/dist`;
+
+/** esm.sh root for Web Awesome's JavaScript modules (bare imports resolved). */
+export const WEB_AWESOME_MODULE_CDN = `https://esm.sh/@awesome.me/webawesome@${WEB_AWESOME_VERSION}/dist`;
+
 /** Web Awesome autoloader — registers elements lazily as they appear. */
-export const WEB_AWESOME_LOADER_URL = `${WEB_AWESOME_CDN}/webawesome.loader.js`;
+export const WEB_AWESOME_LOADER_URL = `${WEB_AWESOME_MODULE_CDN}/webawesome.loader.js`;
 
 /** Web Awesome autoloader with Lit hydration support, for SSR'd markup. */
-export const WEB_AWESOME_SSR_LOADER_URL = `${WEB_AWESOME_CDN}/webawesome.ssr-loader.js`;
+export const WEB_AWESOME_SSR_LOADER_URL = `${WEB_AWESOME_MODULE_CDN}/webawesome.ssr-loader.js`;
+
+/** Configures where the autoloader resolves components and icons from. */
+const WEB_AWESOME_BASE_PATH_URL = `${WEB_AWESOME_MODULE_CDN}/utilities/base-path.js`;
+
 
 /** Complete Web Awesome stylesheet: base styles, theme, palette, utilities. */
 export const WEB_AWESOME_STYLE_URL = `${WEB_AWESOME_CDN}/styles/webawesome.css`;
