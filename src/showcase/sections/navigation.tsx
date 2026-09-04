@@ -255,3 +255,28 @@ export function PageDoc(): ReactElement {
     </ComponentDoc>
   );
 }
+
+export function PaginationDoc(): ReactElement {
+  return (
+    <ComponentDoc
+      tag="wa-pagination"
+      title="Pagination"
+      summary="Splits long lists into pages. Standard format shows the page list; compact collapses to a '1 of n' label for tight spaces."
+      code={`<wa-pagination label="Results" total="237" page-size="10" page="3" with-summary></wa-pagination>`}
+    >
+      <Specimen label="standard with summary">
+        <wa-pagination label="Results" total={237} page-size={10} page={3} with-summary></wa-pagination>
+      </Specimen>
+      <Specimen label="compact with edges">
+        <wa-pagination
+          label="Photos"
+          total={120}
+          page-size={12}
+          page={4}
+          format="compact"
+          with-edges
+        ></wa-pagination>
+      </Specimen>
+    </ComponentDoc>
+  );
+}
