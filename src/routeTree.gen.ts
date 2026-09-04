@@ -16,6 +16,7 @@ import { Route as IconsRouteImport } from './routes/icons'
 import { Route as DeliveryRouteImport } from './routes/delivery'
 import { Route as ComponentsRouteImport } from './routes/components'
 import { Route as ColorsRouteImport } from './routes/colors'
+import { Route as CdnCheckRouteImport } from './routes/cdn-check'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as Char91__mockupChar93PreviewSplatRouteImport } from './routes/[__mockup].preview.$'
 import { Route as Char91__componentChar93PreviewSplatRouteImport } from './routes/[__component].preview.$'
@@ -55,6 +56,11 @@ const ColorsRoute = ColorsRouteImport.update({
   path: '/colors',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CdnCheckRoute = CdnCheckRouteImport.update({
+  id: '/cdn-check',
+  path: '/cdn-check',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -75,6 +81,7 @@ const Char91__componentChar93PreviewSplatRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cdn-check': typeof CdnCheckRoute
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
   '/delivery': typeof DeliveryRoute
@@ -87,6 +94,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cdn-check': typeof CdnCheckRoute
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
   '/delivery': typeof DeliveryRoute
@@ -100,6 +108,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cdn-check': typeof CdnCheckRoute
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
   '/delivery': typeof DeliveryRoute
@@ -114,6 +123,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/cdn-check'
     | '/colors'
     | '/components'
     | '/delivery'
@@ -126,6 +136,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/cdn-check'
     | '/colors'
     | '/components'
     | '/delivery'
@@ -138,6 +149,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/cdn-check'
     | '/colors'
     | '/components'
     | '/delivery'
@@ -151,6 +163,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CdnCheckRoute: typeof CdnCheckRoute
   ColorsRoute: typeof ColorsRoute
   ComponentsRoute: typeof ComponentsRoute
   DeliveryRoute: typeof DeliveryRoute
@@ -213,6 +226,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ColorsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cdn-check': {
+      id: '/cdn-check'
+      path: '/cdn-check'
+      fullPath: '/cdn-check'
+      preLoaderRoute: typeof CdnCheckRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -239,6 +259,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CdnCheckRoute: CdnCheckRoute,
   ColorsRoute: ColorsRoute,
   ComponentsRoute: ComponentsRoute,
   DeliveryRoute: DeliveryRoute,
