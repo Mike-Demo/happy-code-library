@@ -58,6 +58,18 @@ function hcaptchaApi(): HCaptchaApi | null {
 }
 
 /**
+ * hCaptcha only knows `light` and `dark`, so `auto` resolves against the
+ * design system's color scheme (the `wa-dark` class) and the OS preference.
+ */
+function resolveTheme(theme: "light" | "dark" | "auto"): "light" | "dark" {
+  if (theme !== "auto") return theme;
+  if (typeof document === "undefined") return "light";
+  if (document.documentElement.classList.contains("wa-dark")) return "dark";
+  if (document.documentElement.classList.contains("wa-light")) return "light";
+  return window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+/**
  * Loads hCaptcha's widget script once per document. The script must come from
  * hCaptcha's own domain — it cannot be vendored or served from a mirror.
  */
@@ -201,7 +213,7 @@ export const HCaptcha = forwardRef<HCaptchaHandle, HCaptchaProps>(function HCapt
         widgetRef.current = api.render(container, {
           sitekey: siteKey,
           size,
-          theme,
+          theme: resolveTheme(theme),
           ...(hl ? { hl } : {}),
           callback: (value: string, ekey?: string) => {
             setToken(value);
