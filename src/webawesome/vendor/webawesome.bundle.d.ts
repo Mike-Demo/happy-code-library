@@ -5,11 +5,12 @@
  * effect. Only the setup helpers the design system calls are declared here;
  * component props are typed by the React wrappers in ../react.
  */
-declare module "*/webawesome.bundle.js" {
-  /** Overrides where icon SVGs are fetched from. */
-  export function setIconPath(path: string): void;
-  /** Overrides where component modules and assets are fetched from. */
-  export function setBasePath(path: string): void;
-  /** Resolves once every custom element in the document is defined. */
-  export function allDefined(root?: Element | Document): Promise<void>;
-}
+
+/** Overrides where icon SVGs are fetched from. */
+export declare function setIconPath(path: string): void;
+
+/** Overrides where component modules and assets are fetched from. */
+export declare function setBasePath(path: string): void;
+
+/** Resolves once every custom element in the document is defined. */
+export declare function allDefined(root?: Element | Document): Promise<void>;
