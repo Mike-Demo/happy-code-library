@@ -74,8 +74,15 @@ export function FormatBytesDoc(): ReactElement {
 }
 
 export function RelativeTimeDoc(): ReactElement {
-  const twoHoursAgo = new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString();
-  const inThreeDays = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString();
+  // Computed after mount: Date.now() differs between server and client
+  // renders, which would trigger a hydration-mismatch warning.
+  const [dates, setDates] = useState<{ past: string; future: string } | null>(null);
+  useEffect(() => {
+    setDates({
+      past: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+      future: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString(),
+    });
+  }, []);
 
   return (
     <ComponentDoc
@@ -86,10 +93,10 @@ export function RelativeTimeDoc(): ReactElement {
     >
       <Specimen label="past & future">
         <span>
-          Deployed <wa-relative-time date={twoHoursAgo} sync></wa-relative-time>
+          Deployed {dates ? <wa-relative-time date={dates.past} sync></wa-relative-time> : "…"}
         </span>
         <span>
-          Trial ends <wa-relative-time date={inThreeDays} sync></wa-relative-time>
+          Trial ends {dates ? <wa-relative-time date={dates.future} sync></wa-relative-time> : "…"}
         </span>
       </Specimen>
     </ComponentDoc>

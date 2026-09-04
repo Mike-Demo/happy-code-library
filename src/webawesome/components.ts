@@ -2,6 +2,7 @@
 // Browser-only: import this module dynamically (see WebAwesomeLoader) so SSR
 // never evaluates it. Explicit imports keep the bundler in charge — the
 // autoloader's runtime URL discovery does not work in bundled apps.
+import "./icon-library";
 import "@awesome.me/webawesome/dist/components/accordion/accordion.js";
 import "@awesome.me/webawesome/dist/components/accordion-item/accordion-item.js";
 import "@awesome.me/webawesome/dist/components/animated-image/animated-image.js";
