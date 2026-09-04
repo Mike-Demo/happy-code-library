@@ -2,17 +2,21 @@
  * Canonical theme entry — Web Awesome Design System.
  *
  * Importing this one file yields the complete system:
- *   - Web Awesome 3.12 base styles, cascade layers, native element styles
+ *   - Web Awesome 3.12.0 base styles, cascade layers, native element styles
  *   - Default theme + default palette (all --wa-* design tokens)
  *   - Layout & text utilities (wa-stack, wa-cluster, wa-grid, wa-gap-*, ...)
- *   - Font Awesome Free 7.3.1 (self-hosted webfonts, fa-* utility classes)
+ *   - Font Awesome Free 7.3.1 (fa-* utility classes and webfonts)
+ *
+ * Both stylesheets load from a version-pinned CDN, so no npm install is
+ * required to use this design system. To self-host instead, copy the two
+ * dist folders into src/assets/ and repoint the @import URLs below.
  *
  * Pair with theme classes on the root element:
  *   <html class="wa-theme-default wa-palette-default wa-light">
  * (exported as WEB_AWESOME_HTML_CLASSES from ./setup)
  */
-@import "@awesome.me/webawesome/dist/styles/webawesome.css";
-@import "@fortawesome/fontawesome-free/css/all.min.css";
+@import url("https://cdn.jsdelivr.net/npm/@awesome.me/webawesome@3.12.0/dist/styles/webawesome.css");
+@import url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css");
 
 /*
  * Brand overrides — the ONLY place raw color values may appear.

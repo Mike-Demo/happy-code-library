@@ -1,6 +1,16 @@
 // Component docs: actions group. Preview-only.
+// Uses the typed React wrappers from the library barrel, which is what
+// consumers import. Raw `<wa-*>` tags stay valid too (see webawesome/types.d.ts).
 import type { ReactElement } from "react";
 
+import {
+  WaButton,
+  WaButtonGroup,
+  WaCopyButton,
+  WaDropdown,
+  WaDropdownItem,
+  WaIcon,
+} from "../../webawesome/react";
 import { ComponentDoc, Specimen } from "../ui";
 
 const VARIANTS = ["neutral", "brand", "success", "warning", "danger"] as const;
@@ -13,22 +23,22 @@ export function ButtonDoc(): ReactElement {
       tag="wa-button"
       title="Button"
       summary="Pick a variant for meaning and an appearance for weight. Keep one accent brand button per view; demote the rest to filled, outlined, or plain."
-      code={`<wa-button variant="brand">Save changes</wa-button>
-<wa-button appearance="outlined">Cancel</wa-button>
-<wa-button variant="brand" loading>Saving</wa-button>
-<wa-button variant="brand" with-start>
-  <wa-icon slot="start" name="download"></wa-icon>
+      code={`<WaButton variant="brand">Save changes</WaButton>
+<WaButton appearance="outlined">Cancel</WaButton>
+<WaButton variant="brand" loading>Saving</WaButton>
+<WaButton variant="brand" with-start>
+  <WaIcon slot="start" name="download" />
   Download
-</wa-button>`}
+</WaButton>`}
     >
       <Specimen label="variant × appearance">
         <div className="wa-stack wa-gap-s">
           {VARIANTS.map((variant) => (
             <div key={variant} className="wa-cluster wa-gap-s">
               {APPEARANCES.map((appearance) => (
-                <wa-button key={appearance} variant={variant} appearance={appearance}>
+                <WaButton key={appearance} variant={variant} appearance={appearance}>
                   {appearance}
-                </wa-button>
+                </WaButton>
               ))}
             </div>
           ))}
@@ -37,42 +47,42 @@ export function ButtonDoc(): ReactElement {
 
       <Specimen label="sizes & shape">
         {BUTTON_SIZES.map((size) => (
-          <wa-button key={size} variant="brand" size={size}>
+          <WaButton key={size} variant="brand" size={size}>
             Size {size}
-          </wa-button>
+          </WaButton>
         ))}
-        <wa-button variant="brand" pill>
+        <WaButton variant="brand" pill>
           Pill
-        </wa-button>
-        <wa-button variant="brand" href="/components" target="_self">
+        </WaButton>
+        <WaButton variant="brand" href="/components" target="_self">
           Link button
-        </wa-button>
+        </WaButton>
       </Specimen>
 
       <Specimen label="states: loading / disabled / caret">
-        <wa-button variant="brand" loading>
+        <WaButton variant="brand" loading>
           Saving
-        </wa-button>
-        <wa-button variant="brand" disabled>
+        </WaButton>
+        <WaButton variant="brand" disabled>
           Disabled
-        </wa-button>
-        <wa-button appearance="outlined" with-caret>
+        </WaButton>
+        <WaButton appearance="outlined" with-caret>
           With caret
-        </wa-button>
+        </WaButton>
       </Specimen>
 
       <Specimen label="with icons">
-        <wa-button variant="brand" with-start>
-          <wa-icon slot="start" name="download"></wa-icon>
+        <WaButton variant="brand" with-start>
+          <WaIcon slot="start" name="download" />
           Download
-        </wa-button>
-        <wa-button appearance="outlined" with-end>
-          <wa-icon slot="end" name="arrow-right"></wa-icon>
+        </WaButton>
+        <WaButton appearance="outlined" with-end>
+          <WaIcon slot="end" name="arrow-right" />
           Continue
-        </wa-button>
-        <wa-button appearance="filled">
-          <wa-icon name="gear" label="Settings"></wa-icon>
-        </wa-button>
+        </WaButton>
+        <WaButton appearance="filled">
+          <WaIcon name="gear" label="Settings" />
+        </WaButton>
       </Specimen>
     </ComponentDoc>
   );
@@ -84,30 +94,30 @@ export function ButtonGroupDoc(): ReactElement {
       tag="wa-button-group"
       title="Button Group"
       summary="Visually fuses related buttons into a single segmented control. Always set a label for assistive technology."
-      code={`<wa-button-group label="Text alignment">
-  <wa-button appearance="filled"><wa-icon name="align-left" label="Align left"></wa-icon></wa-button>
-  <wa-button appearance="filled"><wa-icon name="align-center" label="Align center"></wa-icon></wa-button>
-  <wa-button appearance="filled"><wa-icon name="align-right" label="Align right"></wa-icon></wa-button>
-</wa-button-group>`}
+      code={`<WaButtonGroup label="Text alignment">
+  <WaButton appearance="filled"><WaIcon name="align-left" label="Align left" /></WaButton>
+  <WaButton appearance="filled"><WaIcon name="align-center" label="Align center" /></WaButton>
+  <WaButton appearance="filled"><WaIcon name="align-right" label="Align right" /></WaButton>
+</WaButtonGroup>`}
     >
       <Specimen label="icon segments">
-        <wa-button-group label="Text alignment">
-          <wa-button appearance="filled">
-            <wa-icon name="align-left" label="Align left"></wa-icon>
-          </wa-button>
-          <wa-button appearance="filled">
-            <wa-icon name="align-center" label="Align center"></wa-icon>
-          </wa-button>
-          <wa-button appearance="filled">
-            <wa-icon name="align-right" label="Align right"></wa-icon>
-          </wa-button>
-        </wa-button-group>
+        <WaButtonGroup label="Text alignment">
+          <WaButton appearance="filled">
+            <WaIcon name="align-left" label="Align left" />
+          </WaButton>
+          <WaButton appearance="filled">
+            <WaIcon name="align-center" label="Align center" />
+          </WaButton>
+          <WaButton appearance="filled">
+            <WaIcon name="align-right" label="Align right" />
+          </WaButton>
+        </WaButtonGroup>
       </Specimen>
       <Specimen label="text segments">
-        <wa-button-group label="Billing period">
-          <wa-button appearance="outlined">Monthly</wa-button>
-          <wa-button appearance="outlined">Yearly</wa-button>
-        </wa-button-group>
+        <WaButtonGroup label="Billing period">
+          <WaButton appearance="outlined">Monthly</WaButton>
+          <WaButton appearance="outlined">Yearly</WaButton>
+        </WaButtonGroup>
       </Specimen>
     </ComponentDoc>
   );
@@ -119,14 +129,14 @@ export function CopyButtonDoc(): ReactElement {
       tag="wa-copy-button"
       title="Copy Button"
       summary="Copies a value to the clipboard and confirms with built-in feedback. Ideal next to code, tokens, and IDs."
-      code={`<wa-copy-button value="bun add @awesome.me/webawesome"></wa-copy-button>`}
+      code={`<WaCopyButton value="--wa-color-brand-fill-loud" />`}
     >
       <Specimen label="next to a value">
-        <code className="ds-code">bun add @awesome.me/webawesome</code>
-        <wa-copy-button value="bun add @awesome.me/webawesome"></wa-copy-button>
+        <code className="ds-code">--wa-color-brand-fill-loud</code>
+        <WaCopyButton value="--wa-color-brand-fill-loud" />
       </Specimen>
       <Specimen label="disabled">
-        <wa-copy-button value="unavailable" disabled></wa-copy-button>
+        <WaCopyButton value="unavailable" disabled />
       </Specimen>
     </ComponentDoc>
   );
@@ -139,35 +149,35 @@ export function DropdownDoc(): ReactElement {
       title="Dropdown"
       also={["wa-dropdown-item"]}
       summary="A menu of commands opened from a trigger button. For picking a value from a list, use Select instead."
-      code={`<wa-dropdown>
-  <wa-button slot="trigger" appearance="filled" with-caret>Actions</wa-button>
-  <wa-dropdown-item value="edit">Edit</wa-dropdown-item>
-  <wa-dropdown-item value="duplicate">Duplicate</wa-dropdown-item>
-  <wa-dropdown-item value="delete" variant="danger">Delete</wa-dropdown-item>
-</wa-dropdown>`}
+      code={`<WaDropdown>
+  <WaButton slot="trigger" appearance="filled" with-caret>Actions</WaButton>
+  <WaDropdownItem value="edit">Edit</WaDropdownItem>
+  <WaDropdownItem value="duplicate">Duplicate</WaDropdownItem>
+  <WaDropdownItem value="delete" variant="danger">Delete</WaDropdownItem>
+</WaDropdown>`}
     >
       <Specimen label="command menu">
-        <wa-dropdown>
-          <wa-button slot="trigger" appearance="filled" with-caret>
+        <WaDropdown>
+          <WaButton slot="trigger" appearance="filled" with-caret>
             Actions
-          </wa-button>
-          <wa-dropdown-item value="edit">
-            <wa-icon slot="icon" name="pen"></wa-icon>
+          </WaButton>
+          <WaDropdownItem value="edit">
+            <WaIcon slot="icon" name="pen" />
             Edit
-          </wa-dropdown-item>
-          <wa-dropdown-item value="duplicate">
-            <wa-icon slot="icon" name="copy"></wa-icon>
+          </WaDropdownItem>
+          <WaDropdownItem value="duplicate">
+            <WaIcon slot="icon" name="copy" />
             Duplicate
-          </wa-dropdown-item>
-          <wa-dropdown-item value="archive">
-            <wa-icon slot="icon" name="box-archive"></wa-icon>
+          </WaDropdownItem>
+          <WaDropdownItem value="archive">
+            <WaIcon slot="icon" name="box-archive" />
             Archive
-          </wa-dropdown-item>
-          <wa-dropdown-item value="delete" variant="danger">
-            <wa-icon slot="icon" name="trash"></wa-icon>
+          </WaDropdownItem>
+          <WaDropdownItem value="delete" variant="danger">
+            <WaIcon slot="icon" name="trash" />
             Delete
-          </wa-dropdown-item>
-        </wa-dropdown>
+          </WaDropdownItem>
+        </WaDropdown>
       </Specimen>
     </ComponentDoc>
   );

@@ -1,12 +1,11 @@
 components:
-  # Generated JSX typings import every component class and declare the full
-  # <wa-*> tag map — the richest single declaration file in the package.
-  - file: node_modules/@awesome.me/webawesome/dist/custom-elements-jsx.d.ts
-    operation: dts-types
+  # The library barrel: typed React wrappers for every Web Awesome element.
+  - file: src/index.ts
+    operation: ts-named-exports
 tokens:
-  # Default theme: semantic tokens (surface, text, spacing, radius, shadow, typography).
-  - file: node_modules/@awesome.me/webawesome/dist/styles/themes/default.css
+  # Canonical theme entry (CDN imports + brand overrides).
+  - file: src/webawesome/theme.css
     operation: css-variables
-  # Default color palette: the full --wa-color-* scales.
-  - file: node_modules/@awesome.me/webawesome/dist/styles/color/palettes/default.css
+  # Local snapshot of the token set the theme provides.
+  - file: src/webawesome/tokens.css
     operation: css-variables
