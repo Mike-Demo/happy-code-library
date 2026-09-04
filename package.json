@@ -4,7 +4,8 @@
   "sideEffects": [
     "**/*.css",
     "**/components.ts",
-    "**/setup.tsx"
+    "**/setup.tsx",
+    "**/icon-library.ts"
   ],
   "type": "module",
   "scripts": {
