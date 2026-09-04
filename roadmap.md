@@ -30,3 +30,4 @@
 - [ ] Optional brand-token overrides in theme.css when the user picks brand colors
 - [ ] Optional fully self-hosted CSS + Font Awesome SVGs (currently version-pinned CDN)
 - [ ] Optional: compress public/showcase/gradient.gif (~1.6 MB, preview-only)
+- [x] Theme editor — live token editing (colors, fonts, spacing/density, corners, shadows), localStorage preview, `brand.css` save via `saveThemeDefaults` server function, `/theme` showcase page.
