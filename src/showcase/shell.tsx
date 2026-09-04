@@ -16,6 +16,7 @@ const FOUNDATION_LINKS = [
 const LIBRARY_LINKS = [
   { to: "/icons", label: "Icons" },
   { to: "/components", label: "Components" },
+  { to: "/licenses", label: "Open source" },
 ] as const;
 
 export function ShowcaseShell({ children }: { children: ReactNode }): ReactElement {
