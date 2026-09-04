@@ -20,3 +20,4 @@ export {
   FONT_AWESOME_VERSION,
 } from "./setup";
 export * from "./react";
+export * from "./patterns";
