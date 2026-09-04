@@ -1,5 +1,5 @@
 // Overview page: system identity, stats, and jumping-off points. Preview-only.
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 
 import { COMPONENT_COUNT } from "./component-registry";
@@ -66,6 +66,8 @@ const PRINCIPLES = [
 ] as const;
 
 export function OverviewPage(): ReactElement {
+  const navigate = useNavigate();
+
   return (
     <>
       <section className="ds-hero">
@@ -77,17 +79,18 @@ export function OverviewPage(): ReactElement {
             free, open source, and themed for light and dark out of the box.
           </p>
           <div className="wa-cluster wa-gap-s">
-            <Link to="/components">
-              <wa-button variant="brand" size="l" with-end>
-                <wa-icon slot="end" name="arrow-right"></wa-icon>
-                Browse components
-              </wa-button>
-            </Link>
-            <Link to="/icons">
-              <wa-button appearance="outlined" size="l">
-                Search icons
-              </wa-button>
-            </Link>
+            <wa-button
+              variant="brand"
+              size="l"
+              with-end
+              onClick={() => void navigate({ to: "/components" })}
+            >
+              <wa-icon slot="end" name="arrow-right"></wa-icon>
+              Browse components
+            </wa-button>
+            <wa-button appearance="outlined" size="l" onClick={() => void navigate({ to: "/icons" })}>
+              Search icons
+            </wa-button>
           </div>
           <div className="ds-stats wa-grid wa-gap-m">
             <div className="ds-stat">
