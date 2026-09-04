@@ -16,7 +16,6 @@ export const WEB_AWESOME_CDN = `https://cdn.jsdelivr.net/npm/@awesome.me/webawes
  */
 export const WEB_AWESOME_HTML_CLASSES = "wa-theme-default wa-palette-default wa-light";
 
-const LOADER_ID = "webawesome-loader";
 
 /**
  * Client-side bootstrap for Web Awesome custom elements.
