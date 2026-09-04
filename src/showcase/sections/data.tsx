@@ -1,4 +1,5 @@
 // Component docs: data & formatting group. Preview-only.
+import { useEffect, useState } from "react";
 import type { ReactElement } from "react";
 
 import { ComponentDoc, Specimen } from "../ui";
