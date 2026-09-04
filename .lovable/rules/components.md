@@ -1586,3 +1586,10 @@ import { WaZoomableFrame } from "@ws-q44iemhjvr3azhdcenod/9fea97bb-e317-446f-b68
 import { WebAwesomeLoader } from "@ws-q44iemhjvr3azhdcenod/9fea97bb-e317-446f-b683-1274350846c6"
 ```
 
+**Props:**
+
+| Prop | Type | Default |
+|---|---|---|
+| `source` | bundle · cdn | `bundle` |
+| `hydrate` | boolean | `false` |
+
