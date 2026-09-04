@@ -2,6 +2,40 @@
 
 Component catalog for **Font Awsome & Web Awesome**. Import all components from `@ws-q44iemhjvr3azhdcenod/9fea97bb-e317-446f-b683-1274350846c6`.
 
+### LicensesPage
+
+```ts
+import { LicensesPage } from "@ws-q44iemhjvr3azhdcenod/9fea97bb-e317-446f-b683-1274350846c6"
+```
+
+**Props:**
+
+| Prop | Type | Default |
+|---|---|---|
+| `heading` | string | `Open source & credits` |
+| `lede` | string | `This app is built on open source software and freely licensed artwork. Everything it depends on is credited below.` |
+| `backHref` | string | `/` |
+| `backLabel` | string | `Back home` |
+| `groups` | any | `—` |
+| `className` | string | `wa-licenses-list` |
+
+### SiteFooter
+
+```ts
+import { SiteFooter } from "@ws-q44iemhjvr3azhdcenod/9fea97bb-e317-446f-b683-1274350846c6"
+```
+
+**Props:**
+
+| Prop | Type | Default |
+|---|---|---|
+| `madeBy` | string | `Made by MikeDemo` |
+| `licensesHref` | string | `/licenses` |
+| `socialLinks` | any | `—` |
+| `year` | number | `—` |
+| `className` | string | `wa-site-footer-meta` |
+| `slot` | string | `—` |
+
 ### WaAccordion
 
 ```ts
