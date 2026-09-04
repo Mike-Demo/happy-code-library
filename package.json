@@ -4,7 +4,10 @@
   "sideEffects": [
     "**/*.css",
     "**/components.ts",
-    "**/setup.tsx"
+    "**/setup.tsx",
+    "**/icon-library.ts",
+    "src/index.ts",
+    "src/webawesome/index.ts"
   ],
   "type": "module",
   "scripts": {
