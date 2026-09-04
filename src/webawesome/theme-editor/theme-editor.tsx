@@ -92,7 +92,7 @@ function ColorControl({
           size="small"
           format="hex"
           value={value ?? ""}
-          label={`${group} color`}
+          aria-label={`${group} color`}
           ref={(element: HTMLElement | null) => {
             ref.current = element;
           }}
