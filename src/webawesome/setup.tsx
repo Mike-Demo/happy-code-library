@@ -45,17 +45,9 @@ export function WebAwesomeLoader(): null {
       // Element definitions come from a self-contained vendor bundle that
       // ships with this design system (see scripts/build-vendor.ts), so
       // consumers need no npm install and no JavaScript CDN. Importing it
-      // registers all 70 <wa-*> elements in one go.
-      const wa = (await import("./vendor/webawesome.bundle.js")) as {
-        setIconPath: (path: string) => void;
-      };
-
-      // Web Awesome's default icon resolver hardcodes an older Font Awesome
-      // release, which 403s for icons added since. Pin the icon path to the
-      // same Font Awesome version theme.css loads.
-      wa.setIconPath(
-        `https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@${FONT_AWESOME_VERSION}/svgs`,
-      );
+      // registers all 70 <wa-*> elements and pins the Font Awesome icon
+      // path to FONT_AWESOME_VERSION.
+      await import("./vendor/webawesome.bundle.js");
     })();
   }, []);
 
