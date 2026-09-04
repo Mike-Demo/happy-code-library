@@ -1,17 +1,5 @@
 framework: react
 css_framework: css-variables
 component_library: webawesome
-source_type: npm
-upstream_package: "@awesome.me/webawesome"
-upstream_packages:
-  - "@awesome.me/webawesome"
-  - "@fortawesome/fontawesome-free"
-upstream_versions:
-  "@awesome.me/webawesome": 3.12.0
-  "@fortawesome/fontawesome-free": 7.3.1
+source_type: local
 starter_template: custom_design_system
-stack_packages:
-  - "@awesome.me/webawesome"
-  - "@fortawesome/fontawesome-free"
-  - react
-  - react-dom
