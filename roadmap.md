@@ -20,6 +20,8 @@
 - [x] Unique head metadata per route
 - [x] Browser-verified after the local conversion: all 6 routes, elements upgrade, icons resolve, wrappers render — zero console errors, zero failed requests
 
+- [x] Standard patterns: SiteFooter + LicensesPage (src/webawesome/patterns/), required in every consuming app per system.md
+
 ## Ready
 - [ ] Optional brand-token overrides in theme.css when the user picks brand colors
 - [ ] Optional fully self-hosted CSS + Font Awesome SVGs (currently version-pinned CDN)
