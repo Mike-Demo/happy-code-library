@@ -10,6 +10,17 @@ export const FONT_AWESOME_VERSION = "7.3.1";
 export const WEB_AWESOME_CDN = `https://cdn.jsdelivr.net/npm/@awesome.me/webawesome@${WEB_AWESOME_VERSION}/dist`;
 
 /**
+ * Base URL for the pinned Web Awesome JavaScript modules.
+ *
+ * esm.sh rather than jsdelivr: Web Awesome's dist modules import bare
+ * specifiers (e.g. "@shoelace-style/animations"), which a browser cannot
+ * resolve from a raw file CDN — loading them from jsdelivr fails with
+ * "Failed to resolve module specifier". esm.sh rewrites those to absolute
+ * URLs. Same pinned version, so CSS and JS stay in lockstep.
+ */
+export const WEB_AWESOME_MODULE_CDN = `https://esm.sh/@awesome.me/webawesome@${WEB_AWESOME_VERSION}/dist`;
+
+/**
  * Classes for the root <html> element. They activate the default theme,
  * the default color palette, and light color scheme. Swap "wa-light" for
  * "wa-dark" (or toggle it at runtime) for dark mode.
@@ -52,14 +63,14 @@ export function WebAwesomeLoader(): null {
       // called explicitly. @vite-ignore keeps Vite from resolving the URL at
       // build time.
       const wa = (await import(
-        /* @vite-ignore */ `${WEB_AWESOME_CDN}/webawesome.loader.js`
+        /* @vite-ignore */ `${WEB_AWESOME_MODULE_CDN}/webawesome.loader.js`
       )) as {
         startLoader: () => void;
         setBasePath: (path: string) => void;
         setIconPath: (path: string) => void;
       };
 
-      wa.setBasePath(WEB_AWESOME_CDN);
+      wa.setBasePath(WEB_AWESOME_MODULE_CDN);
       // Web Awesome's default icon resolver hardcodes an older Font Awesome
       // release, which 403s for icons added since. Pin the icon path to the
       // same Font Awesome version theme.css loads.
