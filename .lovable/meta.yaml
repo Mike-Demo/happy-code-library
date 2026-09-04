@@ -3,6 +3,9 @@ css_framework: css-variables
 component_library: webawesome
 source_type: npm
 upstream_package: "@awesome.me/webawesome"
+upstream_versions:
+  "@awesome.me/webawesome": 3.12.0
+  "@fortawesome/fontawesome-free": 7.3.1
 starter_template: custom_design_system
 stack_packages:
   - "@awesome.me/webawesome"
