@@ -1,8 +1,8 @@
 {
   "meta": {
-    "name": "Font Awsome & Web Awesome",
+    "name": "Font Awsome \u0026 Web Awesome",
     "package": "@ws-q44iemhjvr3azhdcenod/9fea97bb-e317-446f-b683-1274350846c6",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "framework": "react",
     "css_framework": "css-variables",
     "component_library": "webawesome",
@@ -13,7 +13,7 @@
     ],
     "source_type": "local",
     "source_manifest": {
-      "#enrichment": "5875dc2f89c3779c17be5b25361d6b75068c34a75c2f7c0213e1987c279ba3b5",
+      "#enrichment": "986720da83b9ac7af57a4b9a89b0b3efcf8726048a43e2c1f8cca0e1c22c00f8",
       ".dsignore": "95d578405064fa482cd47c5d7addefb9",
       ".gitignore": "6059213806e442947666752f3db6bfdc",
       ".lovable/meta.yaml": "6040da3ba0ce8089d3a289225b27b718",
@@ -21,8 +21,9 @@
       ".lovable/plan/convert-to-a-local-cdn-backed-design-system-2026-09-04.md": "415a908b7120b053dd4766122607c608",
       ".lovable/plan/optional-ssr-and-cdn-support-for-the-web-awesome-design-syst-2026-09-04.md": "b5f2dd41638c022a8d790cb890cfde3a",
       ".lovable/plan/standard-footer-open-source-license-page-2026-09-04.md": "621e4842bc14ed09b0e98c66803d04ba",
+      ".lovable/plan/theme-editor-2026-09-04.md": "15a1059a291ad10c5871e58c6049a354",
       ".lovable/sources.yaml": "e31fd2b129e0dbcfa0c11d6b2acefab4",
-      ".lovable/system.md": "b32deb0b9986842dd15a54d857d81fa3",
+      ".lovable/system.md": "ae97bdfc2cb3c35183158c22fe1479a3",
       "README.md": "d19675c449605f23c7cfa133c69b398b",
       "bunfig.toml": "25f4c8696b22b0943db7191e0cdf7942",
       "eslint.config.js": "07a67437fb1a45ab36d6de0145ff09de",
@@ -32,13 +33,13 @@
       "public/favicon.ico": "9f504444f85a5af2eef9264b02ae40be",
       "public/showcase/gradient.gif": "cc9f538bd7391e7ea9e2cb09be7646d5",
       "public/showcase/include-demo.html": "df3b6f70b3d2b494b3c446f668d21c67",
-      "roadmap.md": "c2574517579c77c54e92a48395c053c6",
+      "roadmap.md": "1d3c1439ef4ec7c18b98377a0b5f3a58",
       "scripts/build-vendor.ts": "f0542692af66a6386d8789b0aad3bc66",
       "scripts/vendor-entry.js": "767ad302cec2dc25434e86ef347bccfc",
       "scripts/vendor-entry.ssr.js": "739d41733d792e985bac97fbea69844e",
       "src/index.ts": "e7edf07ca9c40a99cebf68be87c8b772",
       "src/mockup-preview.d.ts": "38969839f35ce2966e32a9f01a5c09ea",
-      "src/routeTree.gen.ts": "f17db7056ae43c3e7664b773ff4f4620",
+      "src/routeTree.gen.ts": "797224a328ce0f3ed57070df932e4fbe",
       "src/router.tsx": "8f905e713b0eba7fa8148b7995a708c9",
       "src/routes/[__component].preview.$.tsx": "3a40af1fe37daff2e891175a6e6d4f99",
       "src/routes/[__mockup].preview.$.tsx": "5d9f42470848aa60148f20f9580e240e",
@@ -50,6 +51,7 @@
       "src/routes/index.tsx": "288fc009aa0af446d238862343ce8e67",
       "src/routes/licenses.tsx": "9f991bae09bb0b57d242b501b7dddddc",
       "src/routes/scale.tsx": "2248f3d2dcb66bbe00228bb9a9bc9149",
+      "src/routes/theme.tsx": "1301eedb4ba922e0b898b5160c5e5d55",
       "src/routes/typography.tsx": "632f7c1296cbc63422c1c0411a1e1fd7",
       "src/showcase/component-registry.ts": "6aa9a3badb536377cce1da7af240cb45",
       "src/showcase/components-page.tsx": "516386b0d8a8328f85564472837281ec",
@@ -66,12 +68,14 @@
       "src/showcase/sections/navigation.tsx": "364251bcc42405db397ee731b6447e62",
       "src/showcase/sections/overlays.tsx": "d2b4fb60939288812997bbaac71fa666",
       "src/showcase/sections/utilities.tsx": "f61b67dcdec453a8013285a0fa29920b",
-      "src/showcase/shell.tsx": "d691f398151c0f3fc2fc68fd553136a9",
+      "src/showcase/shell.tsx": "41faacb7bf3627a64d7467994d38325b",
       "src/showcase/showcase.css": "09c2b176398247a1b608d8423dad15d0",
+      "src/showcase/theme-page.tsx": "f6a98565bbbb66ab44f848f98f06e349",
       "src/showcase/ui.tsx": "89a853a1a2c2a2ba0e80ed74876d15d2",
       "src/styles.css": "ee6a5eab0a170ce2f071b1fda3daac1b",
+      "src/webawesome/brand.css": "87162925bacbe1c6d08c7d06b77cdfc2",
       "src/webawesome/cdn.ts": "864a39161ad8d48c1acbe27803e58e0f",
-      "src/webawesome/index.ts": "09bac37e034be69193641cca647e4826",
+      "src/webawesome/index.ts": "58920f7b685520af5647923d4b74c777",
       "src/webawesome/patterns/hcaptcha.tsx": "1d02f0a201718d97e422812d0cab6507",
       "src/webawesome/patterns/index.ts": "a0b3495a95ca439364090295a8bd8478",
       "src/webawesome/patterns/licenses.tsx": "af44f6f7432861b32ee95a4e6044caf5",
@@ -151,7 +155,14 @@
       "src/webawesome/react/zoomable-frame.tsx": "98b37d00b9b3f77f0f618edc7c4a6a62",
       "src/webawesome/setup.tsx": "2627f3c703dbf5bf2719f920499c6a9a",
       "src/webawesome/ssr/render.server.ts": "0fc40206330b65d60a4e136f437ec2b8",
-      "src/webawesome/theme.css": "07dcd9ae3afa7bec4abd6173924e641d",
+      "src/webawesome/theme-editor-write.server.ts": "e341d9a967e17e49817be5f0bad30b87",
+      "src/webawesome/theme-editor.functions.ts": "888e2a9b8fe10eec34e0c65540bdd0da",
+      "src/webawesome/theme-editor/index.ts": "3390eb81150b18ad64eae590bdd55a54",
+      "src/webawesome/theme-editor/theme-editor.css": "b5353c63b5dc5b2a1eccc5c8e42d7906",
+      "src/webawesome/theme-editor/theme-editor.tsx": "0abba48bd6cfa1d1bda7216a3e78d93e",
+      "src/webawesome/theme-editor/theme-tokens.ts": "d5280075cfdf0fab830d70cf2288d6a6",
+      "src/webawesome/theme-editor/use-theme-overrides.ts": "7fd76a7c6f99a566a5d67a677e8cedab",
+      "src/webawesome/theme.css": "b4bd95ef43aff69d1b70fffe8c10fc5a",
       "src/webawesome/tokens.css": "af387c1dcf47752c1602b3b3467252df",
       "src/webawesome/types.d.ts": "5d63fa2c07805347f0342714f6f41ff9",
       "src/webawesome/vendor/webawesome.bundle.d.ts": "ed0efd1c745edc755aed008d0a54249f",
@@ -5577,7 +5588,7 @@
         {
           "name": "heading",
           "type": "string",
-          "default": "Open source & credits"
+          "default": "Open source \u0026 credits"
         },
         {
           "name": "lede",
@@ -5678,18 +5689,18 @@
       "examples": [
         {
           "label": "Contact form with a visible challenge",
-          "code": "<form method=\"post\" action=\"/api/public/contact\">\n  <wa-input name=\"email\" label=\"Email\" type=\"email\" required></wa-input>\n  <HCaptcha siteKey={import.meta.env.VITE_HCAPTCHA_SITE_KEY} />\n  <wa-button type=\"submit\" variant=\"brand\">Send</wa-button>\n</form>"
+          "code": "\u003cform method=\"post\" action=\"/api/public/contact\"\u003e\n  \u003cwa-input name=\"email\" label=\"Email\" type=\"email\" required\u003e\u003c/wa-input\u003e\n  \u003cHCaptcha siteKey={import.meta.env.VITE_HCAPTCHA_SITE_KEY} /\u003e\n  \u003cwa-button type=\"submit\" variant=\"brand\"\u003eSend\u003c/wa-button\u003e\n\u003c/form\u003e"
         },
         {
           "label": "Invisible challenge run from your own button",
-          "code": "const captcha = useRef<HCaptchaHandle>(null);\n\n<HCaptcha ref={captcha} size=\"invisible\" siteKey={siteKey} onVerify={(token) => submit(token)} />\n<wa-button variant=\"brand\" onClick={() => captcha.current?.execute()}>Create account</wa-button>"
+          "code": "const captcha = useRef\u003cHCaptchaHandle\u003e(null);\n\n\u003cHCaptcha ref={captcha} size=\"invisible\" siteKey={siteKey} onVerify={(token) =\u003e submit(token)} /\u003e\n\u003cwa-button variant=\"brand\" onClick={() =\u003e captcha.current?.execute()}\u003eCreate account\u003c/wa-button\u003e"
         }
       ],
       "antipatterns": [
         "Trusting the token client-side, or gating a submit purely on onVerify without a server check.",
         "Putting the hCaptcha secret key in client code or in the siteKey prop.",
-        "Adding hCaptcha's api.js with a <script> tag or hand-rolling the widget instead of using this component.",
-        "Using size=\"invisible\" without calling execute() \u2014 no challenge ever runs."
+        "Adding hCaptcha's api.js with a \u003cscript\u003e tag or hand-rolling the widget instead of using this component.",
+        "Using size=\"invisible\" without calling execute() — no challenge ever runs."
       ]
     },
     {
@@ -5699,28 +5710,27 @@
       "props": [
         {
           "name": "onSave",
-          "type": "function",
-          "description": "Receives (css, overrides) when the user saves; omit to offer copy-only."
-        },
-        {
-          "name": "onController",
-          "type": "function",
-          "description": "Receives the live overrides controller."
+          "type": "function"
         },
         {
           "name": "className",
-          "type": "string"
+          "type": "string",
+          "default": "wa-stack wa-gap-2xs"
+        },
+        {
+          "name": "onController",
+          "type": "function"
         }
       ],
-      "usage": "Drop in a panel that retunes the system's semantic colors, font stacks, type scale, spacing/density, corner radius, and shadow strength live. Overrides are applied as --wa-* custom properties on <html> and remembered in localStorage; serializeThemeCss() turns them into the CSS that belongs in src/webawesome/brand.css.",
+      "usage": "Drop in a panel that retunes the system's semantic colors, font stacks, type scale, spacing/density, corner radius, and shadow strength live. Overrides are applied as --wa-* custom properties on \u003chtml\u003e and remembered in localStorage; serializeThemeCss() turns them into the CSS that belongs in src/webawesome/brand.css.",
       "examples": [
         {
           "label": "Copy-only editor",
-          "code": "<ThemeEditor />"
+          "code": "\u003cThemeEditor /\u003e"
         },
         {
           "label": "Save into the brand file",
-          "code": "import { ThemeEditor } from \"@/webawesome/theme-editor\";\nimport { saveThemeDefaults } from \"@/webawesome/theme-editor.functions\";\n\n<ThemeEditor onSave={async (css) => { await saveThemeDefaults({ data: { css } }); }} />"
+          "code": "import { ThemeEditor } from \"@/webawesome/theme-editor\";\nimport { saveThemeDefaults } from \"@/webawesome/theme-editor.functions\";\n\n\u003cThemeEditor onSave={async (css) =\u003e { await saveThemeDefaults({ data: { css } }); }} /\u003e"
         },
         {
           "label": "Read overrides elsewhere",
@@ -5728,7 +5738,7 @@
         }
       ],
       "antipatterns": [
-        "Shipping theme changes only in localStorage \u2014 save them into brand.css so they reach every consumer.",
+        "Shipping theme changes only in localStorage — save them into brand.css so they reach every consumer.",
         "Writing brand token overrides by hand in another stylesheet instead of brand.css.",
         "Exposing the editor on a public production page: it is an authoring tool, and saving is refused outside development."
       ]

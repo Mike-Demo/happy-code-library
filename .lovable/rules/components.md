@@ -87,6 +87,49 @@ import { SiteFooter } from "@ws-q44iemhjvr3azhdcenod/9fea97bb-e317-446f-b683-127
 | `className` | string | `wa-site-footer-meta` |
 | `slot` | string | `—` |
 
+### ThemeEditor
+
+```ts
+import { ThemeEditor } from "@ws-q44iemhjvr3azhdcenod/9fea97bb-e317-446f-b683-1274350846c6"
+```
+
+Drop in a panel that retunes the system's semantic colors, font stacks, type scale, spacing/density, corner radius, and shadow strength live. Overrides are applied as --wa-* custom properties on <html> and remembered in localStorage; serializeThemeCss() turns them into the CSS that belongs in src/webawesome/brand.css.
+
+**Props:**
+
+| Prop | Type | Default |
+|---|---|---|
+| `onSave` | function | `—` |
+| `className` | string | `wa-stack wa-gap-2xs` |
+| `onController` | function | `—` |
+
+**Examples:**
+
+_Copy-only editor_
+```tsx
+<ThemeEditor />
+```
+
+_Save into the brand file_
+```tsx
+import { ThemeEditor } from "@/webawesome/theme-editor";
+import { saveThemeDefaults } from "@/webawesome/theme-editor.functions";
+
+<ThemeEditor onSave={async (css) => { await saveThemeDefaults({ data: { css } }); }} />
+```
+
+_Read overrides elsewhere_
+```tsx
+const { overrides, patch } = useThemeOverrides();
+patch({ colors: { brand: "#7a2ff2" } });
+```
+
+**Avoid:**
+
+- Shipping theme changes only in localStorage — save them into brand.css so they reach every consumer.
+- Writing brand token overrides by hand in another stylesheet instead of brand.css.
+- Exposing the editor on a public production page: it is an authoring tool, and saving is refused outside development.
+
 ### WaAccordion
 
 ```ts
