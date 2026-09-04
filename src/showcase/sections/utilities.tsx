@@ -47,7 +47,7 @@ export function IntersectionObserverDoc(): ReactElement {
           <div className="ds-observer-scroll">
             <div className="ds-observer-spacer">Scroll down inside this box…</div>
             <wa-intersection-observer
-              threshold={0.5}
+              threshold="0.5"
               ref={(element: HTMLElement | null) => {
                 observerRef.current = element;
               }}
