@@ -54,12 +54,12 @@ export function NumberInputDoc(): ReactElement {
     >
       <div className="wa-grid ds-form-grid wa-gap-l">
         <Specimen label="with steppers">
-          <wa-number-input label="Quantity" value={2} min={1} max={99} style={{ width: "100%" }}></wa-number-input>
+          <wa-number-input label="Quantity" value="2" min={1} max={99} style={{ width: "100%" }}></wa-number-input>
         </Specimen>
         <Specimen label="step & hint">
           <wa-number-input
             label="Price"
-            value={49.5}
+            value="49.50"
             step={0.5}
             min={0}
             hint="In USD, per seat"
