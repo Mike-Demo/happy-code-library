@@ -58,26 +58,20 @@ export function WebAwesomeLoader(): null {
     flag.__waLoaderStarted = true;
 
     void (async () => {
-      // The loader module only exports its API; it does not auto-start when
-      // imported (unlike the bundled autoloader), so startLoader() must be
-      // called explicitly. @vite-ignore keeps Vite from resolving the URL at
-      // build time.
+      // Import the full pinned bundle: it registers every <wa-*> element
+      // eagerly, so there is no autoloader base-path or discovery timing to
+      // get wrong. @vite-ignore keeps Vite from resolving the URL at build
+      // time.
       const wa = (await import(
-        /* @vite-ignore */ `${WEB_AWESOME_MODULE_CDN}/webawesome.loader.js`
-      )) as {
-        startLoader: () => void;
-        setBasePath: (path: string) => void;
-        setIconPath: (path: string) => void;
-      };
+        /* @vite-ignore */ `${WEB_AWESOME_MODULE_CDN}/webawesome.js`
+      )) as { setIconPath: (path: string) => void };
 
-      wa.setBasePath(WEB_AWESOME_MODULE_CDN);
       // Web Awesome's default icon resolver hardcodes an older Font Awesome
       // release, which 403s for icons added since. Pin the icon path to the
       // same Font Awesome version theme.css loads.
       wa.setIconPath(
         `https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@${FONT_AWESOME_VERSION}/svgs`,
       );
-      wa.startLoader();
     })();
   }, []);
 
