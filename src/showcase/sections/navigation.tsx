@@ -92,15 +92,15 @@ export function AccordionDoc(): ReactElement {
       also={["wa-accordion-item"]}
       summary="A set of disclosures where opening one can close the others."
       code={`<wa-accordion>
-  <wa-accordion-item summary="Shipping">Orders ship within 2 days.</wa-accordion-item>
-  <wa-accordion-item summary="Returns">30-day return window.</wa-accordion-item>
+  <wa-accordion-item label="Shipping">Orders ship within 2 days.</wa-accordion-item>
+  <wa-accordion-item label="Returns">30-day return window.</wa-accordion-item>
 </wa-accordion>`}
     >
       <Specimen label="grouped disclosures">
         <wa-accordion style={{ width: "100%", maxWidth: "32rem" }}>
-          <wa-accordion-item summary="Shipping">Orders ship within 2 business days.</wa-accordion-item>
-          <wa-accordion-item summary="Returns">Returns are free within a 30-day window.</wa-accordion-item>
-          <wa-accordion-item summary="Warranty">All hardware includes a 2-year warranty.</wa-accordion-item>
+          <wa-accordion-item label="Shipping">Orders ship within 2 business days.</wa-accordion-item>
+          <wa-accordion-item label="Returns">Returns are free within a 30-day window.</wa-accordion-item>
+          <wa-accordion-item label="Warranty">All hardware includes a 2-year warranty.</wa-accordion-item>
         </wa-accordion>
       </Specimen>
     </ComponentDoc>
