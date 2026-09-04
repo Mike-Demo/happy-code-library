@@ -43,6 +43,21 @@ declare global {
 let loadPromise: Promise<HCaptchaApi> | null = null;
 
 /**
+ * The hCaptcha API, or null when it isn't ready yet.
+ *
+ * Guarded on `render` rather than mere presence: browsers expose any element
+ * with `id="hcaptcha"` as `window.hcaptcha`, so a truthiness check can pick up
+ * a DOM node instead of the API.
+ */
+function hcaptchaApi(): HCaptchaApi | null {
+  if (typeof window === "undefined") return null;
+  const candidate = (window as unknown as Record<string, unknown>)["hcaptcha"];
+  return candidate && typeof (candidate as HCaptchaApi).render === "function"
+    ? (candidate as HCaptchaApi)
+    : null;
+}
+
+/**
  * Loads hCaptcha's widget script once per document. The script must come from
  * hCaptcha's own domain — it cannot be vendored or served from a mirror.
  */
@@ -50,7 +65,8 @@ function loadHCaptcha(): Promise<HCaptchaApi> {
   if (typeof window === "undefined") {
     return Promise.reject(new Error("hCaptcha can only load in the browser."));
   }
-  if (window.hcaptcha) return Promise.resolve(window.hcaptcha);
+  const ready = hcaptchaApi();
+  if (ready) return Promise.resolve(ready);
   if (loadPromise) return loadPromise;
 
   loadPromise = new Promise<HCaptchaApi>((resolve, reject) => {
@@ -58,13 +74,25 @@ function loadHCaptcha(): Promise<HCaptchaApi> {
       'script[data-wa-hcaptcha="true"]',
     );
     const script = existing ?? document.createElement("script");
+    const started = Date.now();
 
-    const done = () => {
-      if (window.hcaptcha) resolve(window.hcaptcha);
-      else reject(new Error("hCaptcha script loaded without an API."));
+    // The script installs its API asynchronously after `load`, and a script
+    // already in the document may have fired `load` before we attached — so
+    // poll for the API instead of trusting a single event.
+    const poll = () => {
+      const api = hcaptchaApi();
+      if (api) {
+        resolve(api);
+        return;
+      }
+      if (Date.now() - started > 15000) {
+        loadPromise = null;
+        reject(new Error("hCaptcha did not become ready in time."));
+        return;
+      }
+      window.setTimeout(poll, 100);
     };
 
-    script.addEventListener("load", done);
     script.addEventListener("error", () => {
       loadPromise = null;
       reject(new Error("Failed to load the hCaptcha script."));
@@ -77,6 +105,8 @@ function loadHCaptcha(): Promise<HCaptchaApi> {
       script.dataset["waHcaptcha"] = "true";
       document.head.append(script);
     }
+
+    poll();
   });
 
   return loadPromise;
