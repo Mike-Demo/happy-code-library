@@ -2,7 +2,7 @@
   "meta": {
     "name": "Font Awsome \u0026 Web Awesome",
     "package": "@ws-q44iemhjvr3azhdcenod/9fea97bb-e317-446f-b683-1274350846c6",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "framework": "react",
     "css_framework": "css-variables",
     "component_library": "webawesome",
@@ -16,7 +16,8 @@
       "#enrichment": "b721cf0adbe47fd0e7e9b630ddd57ad37be72f2fb254a2f5461c85958750b774",
       ".dsignore": "95d578405064fa482cd47c5d7addefb9",
       ".gitignore": "6059213806e442947666752f3db6bfdc",
-      ".lovable/meta.yaml": "887466499649a83e7785291a99f52938",
+      ".lovable/meta.yaml": "6040da3ba0ce8089d3a289225b27b718",
+      ".lovable/plan.md": "621e4842bc14ed09b0e98c66803d04ba",
       ".lovable/plan/convert-to-a-local-cdn-backed-design-system-2026-09-04.md": "415a908b7120b053dd4766122607c608",
       ".lovable/sources.yaml": "e31fd2b129e0dbcfa0c11d6b2acefab4",
       ".lovable/system.md": "f9742e489bad9b89f9a9890243678d18",
