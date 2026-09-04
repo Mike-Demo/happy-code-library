@@ -11,6 +11,7 @@ const FOUNDATION_LINKS = [
   { to: "/colors", label: "Colors" },
   { to: "/typography", label: "Typography" },
   { to: "/scale", label: "Scale & depth" },
+  { to: "/theme", label: "Theme editor" },
 ] as const;
 
 const LIBRARY_LINKS = [

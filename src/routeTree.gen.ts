@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TypographyRouteImport } from './routes/typography'
+import { Route as ThemeRouteImport } from './routes/theme'
 import { Route as ScaleRouteImport } from './routes/scale'
 import { Route as LicensesRouteImport } from './routes/licenses'
 import { Route as IconsRouteImport } from './routes/icons'
@@ -23,6 +24,11 @@ import { Route as Char91__componentChar93PreviewSplatRouteImport } from './route
 const TypographyRoute = TypographyRouteImport.update({
   id: '/typography',
   path: '/typography',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThemeRoute = ThemeRouteImport.update({
+  id: '/theme',
+  path: '/theme',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ScaleRoute = ScaleRouteImport.update({
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/icons': typeof IconsRoute
   '/licenses': typeof LicensesRoute
   '/scale': typeof ScaleRoute
+  '/theme': typeof ThemeRoute
   '/typography': typeof TypographyRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
   '/__mockup/preview/$': typeof Char91__mockupChar93PreviewSplatRoute
@@ -93,6 +100,7 @@ export interface FileRoutesByTo {
   '/icons': typeof IconsRoute
   '/licenses': typeof LicensesRoute
   '/scale': typeof ScaleRoute
+  '/theme': typeof ThemeRoute
   '/typography': typeof TypographyRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
   '/__mockup/preview/$': typeof Char91__mockupChar93PreviewSplatRoute
@@ -106,6 +114,7 @@ export interface FileRoutesById {
   '/icons': typeof IconsRoute
   '/licenses': typeof LicensesRoute
   '/scale': typeof ScaleRoute
+  '/theme': typeof ThemeRoute
   '/typography': typeof TypographyRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
   '/__mockup/preview/$': typeof Char91__mockupChar93PreviewSplatRoute
@@ -120,6 +129,7 @@ export interface FileRouteTypes {
     | '/icons'
     | '/licenses'
     | '/scale'
+    | '/theme'
     | '/typography'
     | '/__component/preview/$'
     | '/__mockup/preview/$'
@@ -132,6 +142,7 @@ export interface FileRouteTypes {
     | '/icons'
     | '/licenses'
     | '/scale'
+    | '/theme'
     | '/typography'
     | '/__component/preview/$'
     | '/__mockup/preview/$'
@@ -144,6 +155,7 @@ export interface FileRouteTypes {
     | '/icons'
     | '/licenses'
     | '/scale'
+    | '/theme'
     | '/typography'
     | '/__component/preview/$'
     | '/__mockup/preview/$'
@@ -157,6 +169,7 @@ export interface RootRouteChildren {
   IconsRoute: typeof IconsRoute
   LicensesRoute: typeof LicensesRoute
   ScaleRoute: typeof ScaleRoute
+  ThemeRoute: typeof ThemeRoute
   TypographyRoute: typeof TypographyRoute
   Char91__componentChar93PreviewSplatRoute: typeof Char91__componentChar93PreviewSplatRoute
   Char91__mockupChar93PreviewSplatRoute: typeof Char91__mockupChar93PreviewSplatRoute
@@ -169,6 +182,13 @@ declare module '@tanstack/react-router' {
       path: '/typography'
       fullPath: '/typography'
       preLoaderRoute: typeof TypographyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/theme': {
+      id: '/theme'
+      path: '/theme'
+      fullPath: '/theme'
+      preLoaderRoute: typeof ThemeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/scale': {
@@ -245,6 +265,7 @@ const rootRouteChildren: RootRouteChildren = {
   IconsRoute: IconsRoute,
   LicensesRoute: LicensesRoute,
   ScaleRoute: ScaleRoute,
+  ThemeRoute: ThemeRoute,
   TypographyRoute: TypographyRoute,
   Char91__componentChar93PreviewSplatRoute:
     Char91__componentChar93PreviewSplatRoute,
