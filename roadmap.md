@@ -22,6 +22,8 @@
 
 - [x] Standard patterns: SiteFooter + LicensesPage (src/webawesome/patterns/), required in every consuming app per system.md
 
+- [x] Optional delivery modes: `<WebAwesomeLoader source="cdn" | "bundle" hydrate />`, pinned CDN helper (src/webawesome/cdn.ts), hydration bundle (webawesome.ssr.bundle.js), opt-in server render helper (src/webawesome/ssr/render.server.ts), SSR FOUC rule, Delivery & SSR showcase page
+
 ## Ready
 - [ ] Optional brand-token overrides in theme.css when the user picks brand colors
 - [ ] Optional fully self-hosted CSS + Font Awesome SVGs (currently version-pinned CDN)
