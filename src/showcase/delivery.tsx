@@ -143,7 +143,7 @@ export function DeliveryPage(): ReactElement {
         id="cdn"
         kicker="CDN"
         title="Loading from a CDN"
-        lede="CDN mode fetches Web Awesome's autoloader from jsDelivr at the pinned version and lets it register elements as they appear. Stylesheets already load from the same pinned CDN through theme.css; link tags are available if you prefer them."
+        lede="CDN mode fetches Web Awesome's autoloader from esm.sh at the pinned version and lets it register elements as they appear. Modules come from esm.sh because Web Awesome's published files import bare package names that a browser cannot resolve on its own; stylesheets keep coming from jsDelivr, verbatim, through theme.css."
       >
         <div className="wa-stack wa-gap-l">
           <CodePanel label="Autoloader URLs" code={`${WEB_AWESOME_LOADER_URL}\n${WEB_AWESOME_SSR_LOADER_URL}`} />
