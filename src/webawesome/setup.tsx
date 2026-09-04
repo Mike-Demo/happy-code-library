@@ -9,16 +9,7 @@ export const FONT_AWESOME_VERSION = "7.3.1";
 /** Base URL for the pinned Web Awesome dist files. */
 export const WEB_AWESOME_CDN = `https://cdn.jsdelivr.net/npm/@awesome.me/webawesome@${WEB_AWESOME_VERSION}/dist`;
 
-/**
- * Base URL for the pinned Web Awesome JavaScript modules.
- *
- * esm.sh rather than jsdelivr: Web Awesome's dist modules import bare
- * specifiers (e.g. "@shoelace-style/animations"), which a browser cannot
- * resolve from a raw file CDN — loading them from jsdelivr fails with
- * "Failed to resolve module specifier". esm.sh rewrites those to absolute
- * URLs. Same pinned version, so CSS and JS stay in lockstep.
- */
-export const WEB_AWESOME_MODULE_CDN = `https://esm.sh/@awesome.me/webawesome@${WEB_AWESOME_VERSION}/dist`;
+
 
 /**
  * Classes for the root <html> element. They activate the default theme,
@@ -44,12 +35,9 @@ export const WEB_AWESOME_HTML_CLASSES = "wa-theme-default wa-palette-default wa-
  * hydration-mismatch warning. Mounting inside the routed content makes
  * registration strictly post-hydration.
  *
- * Injection is browser-only and runs once per document. Server-rendered
+ * Loading is browser-only and runs once per document. Server-rendered
  * <wa-*> markup is fine — the tags ship as plain HTML and upgrade in the
- * browser once the loader arrives.
- *
- * To self-host instead, copy the dist folder into src/assets/ and point
- * WEB_AWESOME_CDN at it.
+ * browser once the bundle arrives.
  */
 export function WebAwesomeLoader(): null {
   useEffect(() => {
@@ -58,13 +46,13 @@ export function WebAwesomeLoader(): null {
     flag.__waLoaderStarted = true;
 
     void (async () => {
-      // Import the full pinned bundle: it registers every <wa-*> element
-      // eagerly, so there is no autoloader base-path or discovery timing to
-      // get wrong. @vite-ignore keeps Vite from resolving the URL at build
-      // time.
-      const wa = (await import(
-        /* @vite-ignore */ `${WEB_AWESOME_MODULE_CDN}/webawesome.js`
-      )) as { setIconPath: (path: string) => void };
+      // Element definitions come from a self-contained vendor bundle that
+      // ships with this design system (see scripts/build-vendor.ts), so
+      // consumers need no npm install and no JavaScript CDN. Importing it
+      // registers all 70 <wa-*> elements in one go.
+      const wa = (await import("./vendor/webawesome.bundle.js")) as {
+        setIconPath: (path: string) => void;
+      };
 
       // Web Awesome's default icon resolver hardcodes an older Font Awesome
       // release, which 403s for icons added since. Pin the icon path to the
