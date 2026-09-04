@@ -228,9 +228,10 @@ export const HCaptcha = forwardRef<HCaptchaHandle, HCaptchaProps>(function HCapt
       cancelled = true;
       const widgetId = widgetRef.current;
       widgetRef.current = null;
-      if (widgetId !== null && window.hcaptcha) {
+      const api = hcaptchaApi();
+      if (widgetId !== null && api) {
         try {
-          window.hcaptcha.remove(widgetId);
+          api.remove(widgetId);
         } catch {
           /* widget already gone with its container */
         }
@@ -243,16 +244,16 @@ export const HCaptcha = forwardRef<HCaptchaHandle, HCaptchaProps>(function HCapt
     (): HCaptchaHandle => ({
       execute: () => {
         const widgetId = widgetRef.current;
-        if (widgetId !== null) window.hcaptcha?.execute(widgetId);
+        if (widgetId !== null) hcaptchaApi()?.execute(widgetId);
       },
       reset: () => {
         const widgetId = widgetRef.current;
-        if (widgetId !== null) window.hcaptcha?.reset(widgetId);
+        if (widgetId !== null) hcaptchaApi()?.reset(widgetId);
         setToken("");
       },
       getResponse: () => {
         const widgetId = widgetRef.current;
-        return widgetId !== null ? (window.hcaptcha?.getResponse(widgetId) ?? "") : "";
+        return widgetId !== null ? (hcaptchaApi()?.getResponse(widgetId) ?? "") : "";
       },
     }),
     [],
