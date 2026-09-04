@@ -147,3 +147,33 @@
 .wa-licenses-entry-link:hover {
   text-decoration: underline;
 }
+
+/* ---------- hCaptcha ---------- */
+
+.wa-hcaptcha {
+  display: flex;
+  flex-direction: column;
+  gap: var(--wa-space-2xs);
+}
+
+/* Reserve room for the visible widget so loading causes no layout shift. */
+.wa-hcaptcha[data-size="normal"] .wa-hcaptcha-widget,
+.wa-hcaptcha[data-size="compact"] .wa-hcaptcha-widget {
+  border-radius: var(--wa-border-radius-m);
+  min-block-size: var(--wa-space-3xl);
+}
+
+.wa-hcaptcha[data-status="loading"] .wa-hcaptcha-widget {
+  border: var(--wa-border-width-s) dashed var(--wa-color-surface-border);
+  background-color: var(--wa-color-surface-lowered);
+}
+
+.wa-hcaptcha[data-size="invisible"] .wa-hcaptcha-widget {
+  min-block-size: 0;
+}
+
+.wa-hcaptcha-message {
+  margin: 0;
+  font-size: var(--wa-font-size-s);
+  color: var(--wa-color-danger-on-quiet);
+}

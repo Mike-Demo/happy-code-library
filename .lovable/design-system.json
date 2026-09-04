@@ -1,6 +1,6 @@
 {
   "meta": {
-    "name": "Font Awsome \u0026 Web Awesome",
+    "name": "Font Awsome & Web Awesome",
     "package": "@ws-q44iemhjvr3azhdcenod/9fea97bb-e317-446f-b683-1274350846c6",
     "version": "1.3.0",
     "framework": "react",
@@ -5575,7 +5575,7 @@
         {
           "name": "heading",
           "type": "string",
-          "default": "Open source \u0026 credits"
+          "default": "Open source & credits"
         },
         {
           "name": "lede",
@@ -5601,6 +5601,92 @@
           "type": "string",
           "default": "wa-licenses-list"
         }
+      ]
+    },
+    {
+      "name": "HCaptcha",
+      "file": "src/webawesome/patterns/hcaptcha",
+      "import_path": "",
+      "props": [
+        {
+          "name": "siteKey",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "normal",
+            "compact",
+            "invisible"
+          ],
+          "default": "normal"
+        },
+        {
+          "name": "theme",
+          "type": "enum",
+          "values": [
+            "light",
+            "dark",
+            "auto"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "hl",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "default": "h-captcha-response"
+        },
+        {
+          "name": "onVerify",
+          "type": "function"
+        },
+        {
+          "name": "onExpire",
+          "type": "function"
+        },
+        {
+          "name": "onError",
+          "type": "function"
+        },
+        {
+          "name": "onChallengeOpen",
+          "type": "function"
+        },
+        {
+          "name": "onChallengeClose",
+          "type": "function"
+        },
+        {
+          "name": "className",
+          "type": "string"
+        },
+        {
+          "name": "id",
+          "type": "string"
+        }
+      ],
+      "usage": "Bot protection for sign-up, login, password reset, and public contact forms. Renders hCaptcha's widget themed to the design system and writes the token into a hidden field so a plain form submit carries it; verify that token server-side before trusting the submission.",
+      "examples": [
+        {
+          "label": "Contact form with a visible challenge",
+          "code": "<form method=\"post\" action=\"/api/public/contact\">\n  <wa-input name=\"email\" label=\"Email\" type=\"email\" required></wa-input>\n  <HCaptcha siteKey={import.meta.env.VITE_HCAPTCHA_SITE_KEY} />\n  <wa-button type=\"submit\" variant=\"brand\">Send</wa-button>\n</form>"
+        },
+        {
+          "label": "Invisible challenge run from your own button",
+          "code": "const captcha = useRef<HCaptchaHandle>(null);\n\n<HCaptcha ref={captcha} size=\"invisible\" siteKey={siteKey} onVerify={(token) => submit(token)} />\n<wa-button variant=\"brand\" onClick={() => captcha.current?.execute()}>Create account</wa-button>"
+        }
+      ],
+      "antipatterns": [
+        "Trusting the token client-side, or gating a submit purely on onVerify without a server check.",
+        "Putting the hCaptcha secret key in client code or in the siteKey prop.",
+        "Adding hCaptcha's api.js with a <script> tag or hand-rolling the widget instead of using this component.",
+        "Using size=\"invisible\" without calling execute() \u2014 no challenge ever runs."
       ]
     }
   ]

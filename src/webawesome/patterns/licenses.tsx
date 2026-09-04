@@ -39,6 +39,13 @@ export const baseCredits: readonly LicenseEntry[] = [
     note: `Version ${FONT_AWESOME_VERSION}. All iconography in this interface.`,
   },
   {
+    name: "hCaptcha",
+    author: "Intuition Machines, Inc.",
+    license: "Proprietary service (hCaptcha Terms of Service)",
+    url: "https://www.hcaptcha.com/terms",
+    note: "Bot protection. Only credited when the app uses the HCaptcha component; its widget script loads from hCaptcha's own domain.",
+  },
+  {
     name: "React",
     author: "Meta and contributors",
     license: "MIT",

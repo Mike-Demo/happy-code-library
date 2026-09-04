@@ -24,6 +24,8 @@
 
 - [x] Optional delivery modes: `<WebAwesomeLoader source="cdn" | "bundle" hydrate />`, pinned CDN helper (src/webawesome/cdn.ts), hydration bundle (webawesome.ssr.bundle.js), opt-in server render helper (src/webawesome/ssr/render.server.ts), SSR FOUC rule, Delivery & SSR showcase page
 
+- [x] hCaptcha component (src/webawesome/patterns/hcaptcha.tsx): visible/compact/invisible, imperative execute/reset/getResponse, hidden token field, showcase section, licenses credit, system.md rule
+
 ## Ready
 - [ ] Optional brand-token overrides in theme.css when the user picks brand colors
 - [ ] Optional fully self-hosted CSS + Font Awesome SVGs (currently version-pinned CDN)
