@@ -43,6 +43,7 @@ export const COMPONENT_GROUPS: readonly ComponentGroup[] = [
       { tag: "wa-slider", label: "Slider" },
       { tag: "wa-rating", label: "Rating" },
       { tag: "wa-color-picker", label: "Color Picker" },
+      { tag: "hcaptcha", label: "hCaptcha" },
     ],
   },
   {
