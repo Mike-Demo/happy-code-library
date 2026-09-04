@@ -7,7 +7,7 @@ import {
 } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 
-import { WebAwesomeLoader, WEB_AWESOME_HTML_CLASSES } from "../webawesome/setup";
+import { WEB_AWESOME_HTML_CLASSES } from "../webawesome/setup";
 import themeCss from "../webawesome/theme.css?url";
 import appCss from "../styles.css?url";
 
@@ -57,13 +57,13 @@ function RootShell({ children }: { children: ReactNode }) {
 
 // Keep this root providers-only: canvas preview routes (/__mockup,
 // /__component) render inside it, so any chrome leaks into every frame.
-// WebAwesomeLoader renders nothing — it only registers <wa-*> elements.
+// WebAwesomeLoader is mounted in the showcase shell (not here) so element
+// registration happens strictly after each route's SSR markup hydrates.
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <WebAwesomeLoader />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>

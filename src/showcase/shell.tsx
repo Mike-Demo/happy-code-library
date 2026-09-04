@@ -2,6 +2,8 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactElement, ReactNode } from "react";
 
+import { WebAwesomeLoader } from "@/webawesome/setup";
+
 import { ThemeToggle } from "./ui";
 
 const FOUNDATION_LINKS = [
@@ -18,6 +20,8 @@ const LIBRARY_LINKS = [
 export function ShowcaseShell({ children }: { children: ReactNode }): ReactElement {
   return (
     <wa-page mobile-breakpoint="920">
+      {/* Registers <wa-*> elements after this subtree hydrates. */}
+      <WebAwesomeLoader />
       <a className="wa-visually-hidden" slot="skip-to-content" href="#main">
         Skip to content
       </a>

@@ -10,10 +10,18 @@ export const WEB_AWESOME_HTML_CLASSES = "wa-theme-default wa-palette-default wa-
 /**
  * Client-side bootstrap for Web Awesome custom elements.
  *
- * Mount once near the app root. After hydration it imports ./components,
- * which registers every Web Awesome element explicitly. Explicit imports
- * are required in bundled apps: Web Awesome's autoloader resolves
- * component files by URL at runtime, which 404s under a bundler.
+ * Mount once INSIDE your page content (e.g. in a shared layout that route
+ * components render), not above lazy route boundaries. Its effect fires
+ * after the surrounding tree hydrates, then imports ./components, which
+ * registers every Web Awesome element explicitly. Explicit imports are
+ * required in bundled apps: Web Awesome's autoloader resolves component
+ * files by URL at runtime, which 404s under a bundler.
+ *
+ * Mounting it above a lazy route (e.g. the root route) can register
+ * elements while the route's SSR markup is still hydrating; the upgrade
+ * reflects attributes onto the DOM mid-hydration and React logs a
+ * hydration-mismatch warning. Mounting inside the routed content makes
+ * registration strictly post-hydration.
  *
  * The import MUST stay dynamic and client-side: component modules touch
  * `document` at module scope, so importing them during SSR crashes the

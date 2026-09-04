@@ -141,7 +141,7 @@ export function ComponentsPage(): ReactElement {
   const searchRef = useRef<WaInput | null>(null);
   const [query, setQuery] = useState("");
 
-  useWaEvent(searchRef, ["wa-input"], () => {
+  useWaEvent(searchRef, ["input", "wa-clear"], () => {
     setQuery((searchRef.current?.value ?? "").trim().toLowerCase());
   });
 

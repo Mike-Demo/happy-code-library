@@ -91,7 +91,7 @@ export function IconsPage(): ReactElement {
   const toastRef = useRef<WaToast | null>(null);
   const [query, setQuery] = useState("");
 
-  useWaEvent(searchRef, ["wa-input"], () => {
+  useWaEvent(searchRef, ["input", "wa-clear"], () => {
     setQuery((searchRef.current?.value ?? "").trim().toLowerCase());
   });
 
