@@ -43,9 +43,8 @@ export const WEB_AWESOME_SSR_LOADER_URL = `${WEB_AWESOME_MODULE_CDN}/webawesome.
 /** Configures where the autoloader resolves components and icons from. */
 const WEB_AWESOME_BASE_PATH_URL = `${WEB_AWESOME_MODULE_CDN}/utilities/base-path.js`;
 
-
 /** Complete Web Awesome stylesheet: base styles, theme, palette, utilities. */
-export const WEB_AWESOME_STYLE_URL = `${WEB_AWESOME_CDN}/styles/webawesome.css`;
+export const WEB_AWESOME_STYLE_URL = `${WEB_AWESOME_ASSET_CDN}/styles/webawesome.css`;
 
 /** Font Awesome Free stylesheet: fa-* utility classes and webfonts. */
 export const FONT_AWESOME_STYLE_URL = `${FONT_AWESOME_CDN}/css/all.min.css`;
@@ -70,34 +69,38 @@ export interface CdnLoadOptions {
   hydrate?: boolean;
 }
 
-const SCRIPT_ID = "wa-cdn-loader";
-
 interface BasePathModule {
+  setBasePath: (path: string) => void;
   setIconPath: (path: string) => void;
 }
 
+let loadPromise: Promise<void> | undefined;
+
 /**
- * Loads Web Awesome from the pinned CDN. Browser-only and idempotent: calling
- * it more than once per document is a no-op, so elements are never registered
- * twice.
+ * Loads Web Awesome from the pinned CDN. Browser-only and idempotent: repeat
+ * calls reuse the first load, so elements are never registered twice.
  *
- * The icon path is pinned first, before the loader registers anything: Web
- * Awesome's stock resolver targets an older Font Awesome release whose CDN
- * 404s for icons added since. Both modules come from the same CDN root, so
- * they share the module instance holding that setting.
+ * Order matters. The autoloader starts registering elements the moment its
+ * module evaluates, and it resolves component files against a base path it
+ * only auto-detects for same-origin scripts. So the base-path module is
+ * imported and configured FIRST — base path to the CDN's module root, icon
+ * path to the pinned Font Awesome release (the stock resolver targets an older
+ * release whose CDN 404s for icons added since) — and the autoloader second.
  */
-export async function loadWebAwesomeFromCdn(options: CdnLoadOptions = {}): Promise<void> {
-  if (typeof document === "undefined") return;
-  if (document.getElementById(SCRIPT_ID)) return;
+export function loadWebAwesomeFromCdn(options: CdnLoadOptions = {}): Promise<void> {
+  if (typeof document === "undefined") return Promise.resolve();
+  loadPromise ??= (async () => {
+    const basePath = (await import(
+      /* @vite-ignore */ WEB_AWESOME_BASE_PATH_URL
+    )) as BasePathModule;
+    basePath.setBasePath(WEB_AWESOME_MODULE_CDN);
+    basePath.setIconPath(FONT_AWESOME_ICON_PATH);
 
-  const script = document.createElement("script");
-  script.id = SCRIPT_ID;
-  script.type = "module";
-  script.src = options.hydrate ? WEB_AWESOME_SSR_LOADER_URL : WEB_AWESOME_LOADER_URL;
-
-  const module = (await import(/* @vite-ignore */ `${WEB_AWESOME_CDN}/webawesome.js`)) as BasePathModule;
-  module.setIconPath(FONT_AWESOME_ICON_PATH);
-
-  document.head.append(script);
+    await import(
+      /* @vite-ignore */ options.hydrate ? WEB_AWESOME_SSR_LOADER_URL : WEB_AWESOME_LOADER_URL
+    );
+  })();
+  return loadPromise;
 }
+
 
