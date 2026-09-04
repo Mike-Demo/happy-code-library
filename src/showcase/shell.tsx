@@ -2,6 +2,7 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactElement, ReactNode } from "react";
 
+import { SiteFooter } from "@/webawesome/patterns";
 import { WebAwesomeLoader } from "@/webawesome/setup";
 
 import { ThemeToggle } from "./ui";
@@ -15,6 +16,7 @@ const FOUNDATION_LINKS = [
 const LIBRARY_LINKS = [
   { to: "/icons", label: "Icons" },
   { to: "/components", label: "Components" },
+  { to: "/licenses", label: "Open source" },
 ] as const;
 
 export function ShowcaseShell({ children }: { children: ReactNode }): ReactElement {
@@ -83,10 +85,7 @@ export function ShowcaseShell({ children }: { children: ReactNode }): ReactEleme
         {children}
       </main>
 
-      <footer slot="footer" className="ds-bar ds-footer wa-split">
-        <small>Built with Web Awesome and Font Awesome Free</small>
-        <small className="ds-quiet">Theme: default • Palette: default</small>
-      </footer>
+      <SiteFooter slot="footer" />
     </wa-page>
   );
 }

@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TypographyRouteImport } from './routes/typography'
 import { Route as ScaleRouteImport } from './routes/scale'
+import { Route as LicensesRouteImport } from './routes/licenses'
 import { Route as IconsRouteImport } from './routes/icons'
 import { Route as ComponentsRouteImport } from './routes/components'
 import { Route as ColorsRouteImport } from './routes/colors'
@@ -26,6 +27,11 @@ const TypographyRoute = TypographyRouteImport.update({
 const ScaleRoute = ScaleRouteImport.update({
   id: '/scale',
   path: '/scale',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LicensesRoute = LicensesRouteImport.update({
+  id: '/licenses',
+  path: '/licenses',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IconsRoute = IconsRouteImport.update({
@@ -66,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
   '/icons': typeof IconsRoute
+  '/licenses': typeof LicensesRoute
   '/scale': typeof ScaleRoute
   '/typography': typeof TypographyRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
@@ -76,6 +83,7 @@ export interface FileRoutesByTo {
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
   '/icons': typeof IconsRoute
+  '/licenses': typeof LicensesRoute
   '/scale': typeof ScaleRoute
   '/typography': typeof TypographyRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
@@ -87,6 +95,7 @@ export interface FileRoutesById {
   '/colors': typeof ColorsRoute
   '/components': typeof ComponentsRoute
   '/icons': typeof IconsRoute
+  '/licenses': typeof LicensesRoute
   '/scale': typeof ScaleRoute
   '/typography': typeof TypographyRoute
   '/__component/preview/$': typeof Char91__componentChar93PreviewSplatRoute
@@ -99,6 +108,7 @@ export interface FileRouteTypes {
     | '/colors'
     | '/components'
     | '/icons'
+    | '/licenses'
     | '/scale'
     | '/typography'
     | '/__component/preview/$'
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/colors'
     | '/components'
     | '/icons'
+    | '/licenses'
     | '/scale'
     | '/typography'
     | '/__component/preview/$'
@@ -119,6 +130,7 @@ export interface FileRouteTypes {
     | '/colors'
     | '/components'
     | '/icons'
+    | '/licenses'
     | '/scale'
     | '/typography'
     | '/__component/preview/$'
@@ -130,6 +142,7 @@ export interface RootRouteChildren {
   ColorsRoute: typeof ColorsRoute
   ComponentsRoute: typeof ComponentsRoute
   IconsRoute: typeof IconsRoute
+  LicensesRoute: typeof LicensesRoute
   ScaleRoute: typeof ScaleRoute
   TypographyRoute: typeof TypographyRoute
   Char91__componentChar93PreviewSplatRoute: typeof Char91__componentChar93PreviewSplatRoute
@@ -150,6 +163,13 @@ declare module '@tanstack/react-router' {
       path: '/scale'
       fullPath: '/scale'
       preLoaderRoute: typeof ScaleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/licenses': {
+      id: '/licenses'
+      path: '/licenses'
+      fullPath: '/licenses'
+      preLoaderRoute: typeof LicensesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/icons': {
@@ -202,6 +222,7 @@ const rootRouteChildren: RootRouteChildren = {
   ColorsRoute: ColorsRoute,
   ComponentsRoute: ComponentsRoute,
   IconsRoute: IconsRoute,
+  LicensesRoute: LicensesRoute,
   ScaleRoute: ScaleRoute,
   TypographyRoute: TypographyRoute,
   Char91__componentChar93PreviewSplatRoute:

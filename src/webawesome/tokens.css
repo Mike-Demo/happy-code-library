@@ -4,8 +4,8 @@
  * documented in this repo (the live values load from the CDN via
  * theme.css). Regenerate when the pinned Web Awesome version changes.
  */
-@import url('../layers.css');
-@import url('../color/palettes/default.css');
+/* @import url('../layers.css'); — reference only; not part of this snapshot */
+/* @import url('../color/palettes/default.css'); — reference only; not part of this snapshot */
 
 @layer wa-theme {
   :where(:root),
@@ -377,7 +377,7 @@
     margin: 0;
   }
 }
-@import url('base.css');
+/* @import url('base.css'); — reference only; not part of this snapshot */
 
 @layer wa-color-palette {
   :where(:root),
