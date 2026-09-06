@@ -6,7 +6,7 @@ Add the user's tweet.app profile link to the standard `SiteFooter`, using the cl
 ## Changes
 1. Update `src/webawesome/patterns/site-footer.tsx`:
    - Append a new entry to `DEFAULT_SOCIAL_LINKS`.
-   - `href`: `https://tweet.app/demo`
+   - `href`: `https://app.tweet.app/post/92206629-1525-4a74-8f51-39e226fc9e75`
    - `icon`: `twitter` (classic bird, Font Awesome brands family)
    - `label`: `@demo on tweet.app`
    - `text`: `tweet.app`
