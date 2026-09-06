@@ -111,6 +111,9 @@ export const STOCK_VALUES = {
   shadowScale: 1,
 } as const;
 
+/** Stock shadow axis scales from tokens.css; the slider multiplies these. */
+const STOCK_SHADOW = { offsetX: 0, offsetY: 1, blur: 1, spread: -0.5 } as const;
+
 /** True when nothing is overridden. */
 export function isDefaultOverrides(overrides: ThemeOverrides): boolean {
   return Object.keys(themeCustomProperties(overrides)).length === 0;
