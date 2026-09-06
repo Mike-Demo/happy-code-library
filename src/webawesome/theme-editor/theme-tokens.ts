@@ -223,11 +223,14 @@ export function themeCustomProperties(overrides: ThemeOverrides): Record<string,
     out["--wa-border-radius-scale"] = String(overrides.shape.radiusScale);
   }
   if (overrides.shape.shadowScale !== null) {
-    const scale = String(overrides.shape.shadowScale);
-    out["--wa-shadow-blur-scale"] = scale;
-    out["--wa-shadow-offset-x-scale"] = scale;
-    out["--wa-shadow-offset-y-scale"] = scale;
-    out["--wa-shadow-spread-scale"] = scale;
+    // Multiply the stock shadow shape rather than flattening every axis to the
+    // same number: offset-x stays 0, offset-y and blur grow, and spread keeps
+    // its negative sign so shadows tighten instead of bulging outward.
+    const factor = overrides.shape.shadowScale;
+    out["--wa-shadow-offset-x-scale"] = String(round(STOCK_SHADOW.offsetX * factor, 4));
+    out["--wa-shadow-offset-y-scale"] = String(round(STOCK_SHADOW.offsetY * factor, 4));
+    out["--wa-shadow-blur-scale"] = String(round(STOCK_SHADOW.blur * factor, 4));
+    out["--wa-shadow-spread-scale"] = String(round(STOCK_SHADOW.spread * factor, 4));
   }
 
   return out;
