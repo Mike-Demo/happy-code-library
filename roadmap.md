@@ -26,6 +26,7 @@
 
 - [x] hCaptcha component (src/webawesome/patterns/hcaptcha.tsx): visible/compact/invisible, imperative execute/reset/getResponse, hidden token field, showcase section, licenses credit, system.md rule
 - [x] Anti-FOUCE utility included: wa-cloak class via pinned CDN fouce.css import in theme.css + local fallback in tokens.css
+- [x] Search readiness: brand mark (src/assets/logos/brand-mark.png), public/favicon.png + root icon link, public/robots.txt, delivery/minification rules in system.md
 
 ## Ready
 - [ ] Optional brand-token overrides in theme.css when the user picks brand colors
