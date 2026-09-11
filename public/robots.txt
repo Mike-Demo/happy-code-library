@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Internal editor-only preview routes — not real pages.
+Disallow: /__mockup/
+Disallow: /__component/
