@@ -30,9 +30,11 @@ export {
   loadWebAwesomeFromCdn,
   FONT_AWESOME_ICON_PATH,
   FONT_AWESOME_STYLE_URL,
+  WEB_AWESOME_FOUCE_STYLE_URL,
   WEB_AWESOME_LOADER_URL,
   WEB_AWESOME_SSR_LOADER_URL,
   WEB_AWESOME_STYLE_URL,
+  WEB_AWESOME_STYLE_URLS,
 } from "./cdn";
 export type { CdnLoadOptions } from "./cdn";
 export * from "./react";
