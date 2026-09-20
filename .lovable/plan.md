@@ -43,13 +43,25 @@ request time needs a server.
   the favicon are untouched.
 - The theme editor's dev-only "Save as default" behavior is untouched.
 
+## SSR question — answered from Spacefast's own docs
+
+Yes, this project can already do SSR — the TanStack Start server build (the
+old `STATIC_BUILD=0` Worker path) renders pages on a server at request time.
+But Spacefast cannot host it: its agent docs state plainly "Do not use
+Spacefast for: server-side code, background jobs, cron, or databases …
+Spacefast serves a site's built output — bring a build, not a server." The
+build error you hit is exactly that rule being enforced. Spacefast has no SSR
+mode to switch on, so prerendered static hosting (what we set up) is the only
+way to run this project there.
+
 ## Trade-off to be aware of
 
 Removing the Worker config means the project can no longer be built as a
 Cloudflare Worker (the old `STATIC_BUILD=0` path). That path produced a
-server-rendered deployment this project no longer uses — static hosting is the
-stated target. If you ever need SSR hosting again, the two pieces
-(`wrangler.jsonc` and the plugin wiring) can be re-added.
+server-rendered deployment this project no longer uses, and Spacefast —
+the stated hosting target — does not accept server-side code anyway. If you
+ever move to a host that does SSR, the two pieces (`wrangler.jsonc` and the
+plugin wiring) can be re-added.
 
 ## Verification
 
