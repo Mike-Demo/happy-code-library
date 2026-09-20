@@ -2,6 +2,8 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 
+import { WaButton, WaCard, WaCopyButton, WaIcon } from "@/webawesome/react";
+
 import { COMPONENT_COUNT } from "./component-registry";
 import { BRAND_ICONS, REGULAR_ICONS, SOLID_ICONS } from "./icon-index";
 
