@@ -39,14 +39,11 @@ prerendered and are disallowed in `robots.txt`.
 Do **not** set `nitro: { preset: "static" }` — it breaks this SSR build
 ("rolldownOptions.input should not be an html file").
 
-## Cloudflare Workers plugin and `STATIC_BUILD`
+## No server-side code
 
-The Workers plugin replaces the plain server bundle the prerender preview
-server imports, which made prerendering fail with
-`Cannot find module dist/server/server.js` and `Failed to fetch /...: Internal
-Server Error`. So `vite.config.ts` treats the static build as the default: the
-Workers plugin is off and prerendering is on. Set `STATIC_BUILD=0` to get the
-old Worker build back (prerendering is then disabled).
+Spacefast serves only built static output — no server-side code, so this
+project carries no server deployment configuration (no Worker entrypoint, no
+`wrangler.jsonc`). Every page is prerendered; nothing runs at request time.
 
 ## Static files served from `public/`
 
