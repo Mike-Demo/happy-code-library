@@ -2,6 +2,8 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 
+import { WaButton, WaCard, WaCopyButton, WaIcon } from "@/webawesome/react";
+
 import { COMPONENT_COUNT } from "./component-registry";
 import { BRAND_ICONS, REGULAR_ICONS, SOLID_ICONS } from "./icon-index";
 
@@ -79,18 +81,18 @@ export function OverviewPage(): ReactElement {
             free, open source, and themed for light and dark out of the box.
           </p>
           <div className="wa-cluster wa-gap-s">
-            <wa-button
+            <WaButton
               variant="brand"
               size="l"
               with-end
               onClick={() => void navigate({ to: "/components" })}
             >
-              <wa-icon slot="end" name="arrow-right"></wa-icon>
+              <WaIcon slot="end" name="arrow-right"></WaIcon>
               Browse components
-            </wa-button>
-            <wa-button appearance="outlined" size="l" onClick={() => void navigate({ to: "/icons" })}>
+            </WaButton>
+            <WaButton appearance="outlined" size="l" onClick={() => void navigate({ to: "/icons" })}>
               Search icons
-            </wa-button>
+            </WaButton>
           </div>
           <div className="ds-stats wa-grid wa-gap-m">
             <div className="ds-stat">
@@ -122,16 +124,16 @@ export function OverviewPage(): ReactElement {
           <div className="wa-grid ds-page-grid wa-gap-l">
             {PAGES.map((page) => (
               <Link key={page.to} to={page.to} className="ds-page-card-link">
-                <wa-card className="ds-page-card">
+                <WaCard className="ds-page-card">
                   <div className="wa-stack wa-gap-s">
-                    <wa-icon name={page.icon} className="ds-page-card-icon"></wa-icon>
+                    <WaIcon name={page.icon} className="ds-page-card-icon"></WaIcon>
                     <strong>{page.title}</strong>
                     <span className="ds-quiet">{page.text}</span>
                     <span className="ds-page-card-cta">
-                      Open <wa-icon name="arrow-right"></wa-icon>
+                      Open <WaIcon name="arrow-right"></WaIcon>
                     </span>
                   </div>
-                </wa-card>
+                </WaCard>
               </Link>
             ))}
           </div>
@@ -147,7 +149,7 @@ export function OverviewPage(): ReactElement {
           <div className="wa-grid ds-page-grid wa-gap-l">
             {PRINCIPLES.map((principle) => (
               <div key={principle.title} className="ds-principle wa-stack wa-gap-s">
-                <wa-icon name={principle.icon} className="ds-page-card-icon"></wa-icon>
+                <WaIcon name={principle.icon} className="ds-page-card-icon"></WaIcon>
                 <strong>{principle.title}</strong>
                 <span className="ds-quiet">{principle.text}</span>
               </div>
@@ -160,7 +162,7 @@ export function OverviewPage(): ReactElement {
               <pre>
                 <code>{QUICK_START}</code>
               </pre>
-              <wa-copy-button value={QUICK_START}></wa-copy-button>
+              <WaCopyButton value={QUICK_START}></WaCopyButton>
             </div>
           </div>
         </div>

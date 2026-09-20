@@ -2,6 +2,7 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactElement, ReactNode } from "react";
 
+import { WaBadge, WaButton, WaIcon, WaPage } from "@/webawesome/react";
 import { SiteFooter } from "@/webawesome/patterns";
 import { WebAwesomeLoader } from "@/webawesome/setup";
 
@@ -23,7 +24,7 @@ const LIBRARY_LINKS = [
 
 export function ShowcaseShell({ children }: { children: ReactNode }): ReactElement {
   return (
-    <wa-page mobile-breakpoint="920">
+    <WaPage mobile-breakpoint="920">
       {/* Registers <wa-*> elements after this subtree hydrates. */}
       <WebAwesomeLoader />
       <a className="wa-visually-hidden" slot="skip-to-content" href="#main">
@@ -32,19 +33,19 @@ export function ShowcaseShell({ children }: { children: ReactNode }): ReactEleme
 
       <header slot="header" className="ds-bar wa-split wa-gap-m">
         <div className="wa-cluster wa-gap-s" style={{ alignItems: "center" }}>
-          <wa-button className="wa-mobile-only" appearance="plain" size="s" data-toggle-nav>
-            <wa-icon name="bars" label="Open navigation"></wa-icon>
-          </wa-button>
+          <WaButton className="wa-mobile-only" appearance="plain" size="s" data-toggle-nav>
+            <WaIcon name="bars" label="Open navigation"></WaIcon>
+          </WaButton>
           <Link to="/" className="ds-brand-link wa-cluster wa-gap-s" style={{ alignItems: "center" }}>
-            <wa-icon className="ds-logo" name="wand-magic-sparkles"></wa-icon>
+            <WaIcon className="ds-logo" name="wand-magic-sparkles"></WaIcon>
             <span className="ds-brand">Awesome DS</span>
           </Link>
-          <wa-badge variant="neutral" appearance="outlined">
+          <WaBadge variant="neutral" appearance="outlined">
             WA 3.12
-          </wa-badge>
-          <wa-badge variant="neutral" appearance="outlined">
+          </WaBadge>
+          <WaBadge variant="neutral" appearance="outlined">
             FA 7.3
-          </wa-badge>
+          </WaBadge>
         </div>
         <div className="wa-cluster wa-gap-xs" style={{ alignItems: "center" }}>
           <ThemeToggle />
@@ -88,6 +89,6 @@ export function ShowcaseShell({ children }: { children: ReactNode }): ReactEleme
       </main>
 
       <SiteFooter slot="footer" />
-    </wa-page>
+    </WaPage>
   );
 }
