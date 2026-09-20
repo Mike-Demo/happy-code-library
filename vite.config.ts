@@ -26,7 +26,23 @@ export default defineConfig(({ command, mode }) => {
       mockupPreviewPlugin(),
       tsConfigPaths({ projects: ["./tsconfig.json"] }),
       ...(useCloudflare ? [cloudflare({ viteEnvironment: { name: "ssr" } })] : []),
-      tanstackStart(),
+      tanstackStart({
+        // Static hosting: every public route is prerendered to HTML at build
+        // time. Discovery stays off so the editor-only preview routes
+        // (/__mockup, /__component) are never prerendered.
+        pages: [
+          { path: "/" },
+          { path: "/colors" },
+          { path: "/typography" },
+          { path: "/scale" },
+          { path: "/theme" },
+          { path: "/icons" },
+          { path: "/components" },
+          { path: "/delivery" },
+          { path: "/licenses" },
+        ],
+        prerender: { enabled: true, autoStaticPathsDiscovery: false },
+      }),
       viteReact(),
       ...(mode === "development" ? [componentTagger()] : []),
     ],
