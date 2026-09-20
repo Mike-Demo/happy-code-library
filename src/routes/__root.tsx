@@ -8,6 +8,10 @@ import {
 import type { ReactNode } from "react";
 
 import { WEB_AWESOME_HTML_CLASSES } from "../webawesome/setup";
+import {
+  WEB_AWESOME_FOUCE_STYLE_URL,
+  WEB_AWESOME_STYLE_URLS,
+} from "../webawesome/cdn";
 import themeCss from "../webawesome/theme.css?url";
 import appCss from "../styles.css?url";
 
@@ -32,6 +36,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      // Web Awesome + Font Awesome base styles and the anti-FOUCE utility
+      // load from the pinned CDN as plain <link> tags — remote @import in
+      // theme.css would break consumer CSS pipelines (see webawesome/cdn).
+      ...WEB_AWESOME_STYLE_URLS.map((href) => ({ rel: "stylesheet", href }) as const),
+      { rel: "stylesheet", href: WEB_AWESOME_FOUCE_STYLE_URL },
       { rel: "stylesheet", href: themeCss },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
