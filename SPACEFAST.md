@@ -5,21 +5,24 @@ static site: every public page is prerendered to HTML at build time.
 
 ## Commands
 
-| Step    | Command                                               |
-| ------- | ----------------------------------------------------- |
-| Install | `npm install`                                         |
-| Build   | `vite build && node scripts/copy-static-output.mjs`    |
+| Step    | Command                                             |
+| ------- | --------------------------------------------------- |
+| Install | `npm install`                                       |
+| Build   | `vite build && node scripts/copy-static-output.mjs` |
 
-(`npm run build` runs exactly that build command.)
+(`npm run build` runs exactly that.)
 
 ## Output directory
 
 - **Publish this:** `dist/client`
-- Raw build output it is copied from: `.output/public`
+- Raw prerender output it is copied from (when present): `.output/public`
 
-`scripts/copy-static-output.mjs` copies `.output/public` into a clean
-`dist/client` after the build. It is idempotent and skips gracefully if the
-output already lives in `dist/client`.
+In this project the prerender pass writes straight into `dist/client`, so
+`scripts/copy-static-output.mjs` detects that and exits cleanly with
+`.output/public missing; dist/client already populated`. It exists so the build
+keeps working if a future Nitro/TanStack version emits `.output/public`
+instead: then it cleans `dist/client` and copies the output across. Either way,
+the directory to publish is always `dist/client`.
 
 ## Prerendered routes
 
@@ -36,6 +39,15 @@ prerendered and are disallowed in `robots.txt`.
 Do **not** set `nitro: { preset: "static" }` — it breaks this SSR build
 ("rolldownOptions.input should not be an html file").
 
+## Cloudflare Workers plugin and `STATIC_BUILD`
+
+The Workers plugin replaces the plain server bundle the prerender preview
+server imports, which made prerendering fail with
+`Cannot find module dist/server/server.js` and `Failed to fetch /...: Internal
+Server Error`. So `vite.config.ts` treats the static build as the default: the
+Workers plugin is off and prerendering is on. Set `STATIC_BUILD=0` to get the
+old Worker build back (prerendering is then disabled).
+
 ## Static files served from `public/`
 
 - `sitemap.xml` — all nine public routes
@@ -46,6 +58,6 @@ Do **not** set `nitro: { preset: "static" }` — it breaks this SSR build
 ## Not available on the static site
 
 The theme editor's "Save as default" button writes `src/webawesome/brand.css`
-and only works while developing locally. On the published site it reports that
-and suggests "Copy CSS" instead. Everything else — live theme preview, dark
-mode, icon search, component demos — runs entirely in the browser.
+and only works while developing locally. On the published site it says so and
+points at "Copy CSS" instead. Everything else — live theme preview, dark mode,
+icon search, component demos, hCaptcha — runs entirely in the browser.
