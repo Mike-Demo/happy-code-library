@@ -279,7 +279,14 @@ export function ThemeEditor({ onSave, className, onController }: ThemeEditorProp
       reset();
     } catch (cause) {
       setStatus("failed");
-      setError(cause instanceof Error ? cause.message : "Saving failed.");
+      // On a statically hosted site there is no server to write the file, so
+      // the request itself fails. Say that plainly instead of surfacing a raw
+      // network error; the generated CSS can still be copied.
+      const message =
+        cause instanceof Error && /^Saving theme defaults/.test(cause.message)
+          ? cause.message
+          : "Saving defaults isn't available on this site — it only works while developing. Use “Copy CSS” and commit it to src/webawesome/brand.css instead.";
+      setError(message);
     }
   }, [css, onSave, overrides, reset]);
 
