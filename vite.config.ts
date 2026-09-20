@@ -46,7 +46,7 @@ export default defineConfig(({ command, mode }) => {
           { path: "/delivery" },
           { path: "/licenses" },
         ],
-        prerender: { enabled: true, autoStaticPathsDiscovery: false },
+        prerender: { enabled: staticBuild, autoStaticPathsDiscovery: false },
       }),
       viteReact(),
       ...(mode === "development" ? [componentTagger()] : []),
