@@ -89,6 +89,6 @@ export function ShowcaseShell({ children }: { children: ReactNode }): ReactEleme
       </main>
 
       <SiteFooter slot="footer" />
-    </wa-page>
+    </WaPage>
   );
 }
