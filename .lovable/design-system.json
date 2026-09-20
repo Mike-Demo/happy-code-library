@@ -2,7 +2,7 @@
   "meta": {
     "name": "Font Awsome \u0026 Web Awesome",
     "package": "@ws-q44iemhjvr3azhdcenod/9fea97bb-e317-446f-b683-1274350846c6",
-    "version": "1.8.0",
+    "version": "1.9.0",
     "framework": "react",
     "css_framework": "css-variables",
     "component_library": "webawesome",
@@ -17,6 +17,7 @@
       ".dsignore": "95d578405064fa482cd47c5d7addefb9",
       ".gitignore": "6059213806e442947666752f3db6bfdc",
       ".lovable/meta.yaml": "6040da3ba0ce8089d3a289225b27b718",
+      ".lovable/plan.md": "186bc84b1787067480f4d7961fc1e9bb",
       ".lovable/plan/add-hcaptcha-as-a-component-2026-09-04.md": "da4af5c5d67fac716faa58bb98b0c7db",
       ".lovable/plan/add-tweet-app-link-to-the-standard-footer-2026-09-06.md": "fd419bdd60c712039a26d930c244df84",
       ".lovable/plan/convert-to-a-local-cdn-backed-design-system-2026-09-04.md": "415a908b7120b053dd4766122607c608",
