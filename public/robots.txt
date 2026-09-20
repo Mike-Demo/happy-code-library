@@ -4,3 +4,5 @@ Allow: /
 # Internal editor-only preview routes — not real pages.
 Disallow: /__mockup/
 Disallow: /__component/
+
+Sitemap: https://happy-code-library.lovable.app/sitemap.xml
