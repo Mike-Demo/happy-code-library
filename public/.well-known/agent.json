@@ -1,0 +1,37 @@
+{
+  "name": "Awesome DS",
+  "description": "Awesome DS is a token-driven design-system showcase built on Web Awesome 3.12 and Font Awesome Free 7.3.1: 70 typed React component wrappers, 2,883 searchable icons, semantic design tokens, and light/dark themes with a live theme editor. Static, read-only site — no APIs.",
+  "url": "https://design.1.mikedemo.dev",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false
+  },
+  "defaultInputModes": ["text"],
+  "defaultOutputModes": ["text"],
+  "skills": [
+    {
+      "id": "browse-foundations",
+      "name": "Browse design foundations",
+      "description": "Explore the system's design tokens: semantic color tokens and palettes (/colors), typography — font families, sizes, and weights (/typography), and spacing, radius, and shadow tokens (/scale).",
+      "tags": ["design-system", "tokens", "colors", "typography", "theming"]
+    },
+    {
+      "id": "browse-components",
+      "name": "Browse components",
+      "description": "Catalog of all 70 components with live examples and usage guidance (/components).",
+      "tags": ["design-system", "components", "web-awesome", "web-components"]
+    },
+    {
+      "id": "browse-icons",
+      "name": "Browse icons",
+      "description": "Searchable index of 2,883 Font Awesome Free icons — search with /icons?q=<term> (/icons).",
+      "tags": ["design-system", "icons", "font-awesome", "search"]
+    },
+    {
+      "id": "read-usage-guidance",
+      "name": "Read delivery and integration guidance",
+      "description": "How to consume the system in a project: bundle, CDN, and server-side-rendering options (/delivery), plus open-source credits and license terms (/licenses).",
+      "tags": ["design-system", "integration", "delivery", "ssr", "licensing"]
+    }
+  ]
+}
