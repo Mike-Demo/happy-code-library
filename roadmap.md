@@ -67,3 +67,4 @@ Architecture notes: [`docs/architecture.md`](docs/architecture.md).
 - [ ] Compress `public/showcase/gradient.gif` (~1.6 MB, preview-only)
 - [ ] Update absolute URLs in `public/sitemap.xml` and `public/robots.txt` when a
       custom domain is connected
+- [x] Agent readiness: llms.txt, canonical/og:url, JSON-LD, real-domain sitemap (host firewall still blocks bots — owner action)

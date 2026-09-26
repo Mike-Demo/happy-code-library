@@ -1,3 +1,4 @@
+import { canonicalLinks, ogUrl, pageJsonLd } from "@/showcase/seo";
 import { createFileRoute } from "@tanstack/react-router";
 
 import showcaseCss from "@/showcase/showcase.css?url";
@@ -20,9 +21,11 @@ export const Route = createFileRoute("/colors")({
           "Semantic color tokens with guaranteed-contrast pairs, surfaces, and full palette scales for light and dark themes.",
       },
       { property: "og:type", content: "website" },
+      ogUrl("/colors"),
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "stylesheet", href: showcaseCss }],
+    links: [{ rel: "stylesheet", href: showcaseCss }, ...canonicalLinks("/colors")],
+    scripts: pageJsonLd("/colors", "Colors — Awesome DS"),
   }),
   component: ColorsRoute,
 });

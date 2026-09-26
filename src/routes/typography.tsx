@@ -1,3 +1,4 @@
+import { canonicalLinks, ogUrl, pageJsonLd } from "@/showcase/seo";
 import { createFileRoute } from "@tanstack/react-router";
 
 import showcaseCss from "@/showcase/showcase.css?url";
@@ -20,9 +21,11 @@ export const Route = createFileRoute("/typography")({
           "Font families, the modular type scale, and named weights — every text style driven by --wa-font-* tokens.",
       },
       { property: "og:type", content: "website" },
+      ogUrl("/typography"),
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "stylesheet", href: showcaseCss }],
+    links: [{ rel: "stylesheet", href: showcaseCss }, ...canonicalLinks("/typography")],
+    scripts: pageJsonLd("/typography", "Typography — Awesome DS"),
   }),
   component: TypographyRoute,
 });

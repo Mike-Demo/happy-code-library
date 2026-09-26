@@ -1,0 +1,24 @@
+# Awesome DS — Web Awesome Design System
+
+> Token-driven design system built on Web Awesome 3.12 and Font Awesome Free 7.3.1: 70 typed React wrappers for Web Awesome elements, 2,883 icons, light and dark themes, a live theme editor, and a standard footer and license page. The site is a static, prerendered showcase of the system.
+
+## Pages
+
+- [Overview](https://design.1.mikedemo.dev/): what the system is and how to start
+- [Colors](https://design.1.mikedemo.dev/colors): semantic color tokens and palettes
+- [Typography](https://design.1.mikedemo.dev/typography): font families, sizes, and weights
+- [Scale & Depth](https://design.1.mikedemo.dev/scale): spacing, radius, and shadow tokens
+- [Theme Editor](https://design.1.mikedemo.dev/theme): adjust colors, fonts, and spacing live and copy the CSS
+- [Icons](https://design.1.mikedemo.dev/icons): searchable Font Awesome Free index (search with ?q=term)
+- [Components](https://design.1.mikedemo.dev/components): every component with examples
+- [Delivery & SSR](https://design.1.mikedemo.dev/delivery): bundle, CDN, and server-rendering options
+- [Licenses](https://design.1.mikedemo.dev/licenses): open-source credits
+
+## Source
+
+- [GitHub repository](https://github.com/Mike-Demo/happy-code-library): source, README, and docs/
+- [Sitemap](https://design.1.mikedemo.dev/sitemap.xml)
+
+## Licenses
+
+Web Awesome (MIT), Font Awesome Free (icons CC BY 4.0, fonts SIL OFL 1.1, code MIT).

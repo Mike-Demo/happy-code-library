@@ -67,3 +67,10 @@ This design system wraps **Web Awesome 3.12.0** — the free, open-source web co
 - **robots.txt.** Ship `public/robots.txt` with `User-agent: *` + `Allow: /`, and `Disallow:` only genuinely non-public paths (editor preview routes, admin areas). Never a sitewide `Disallow: /`. Add a `Sitemap:` line only once the site has a published public URL and a real sitemap.
 - **Per-page metadata.** Every content route defines its own `head()` with a unique title, description, `og:title`, and `og:description`. The root route holds sitewide defaults only.
 - **Delivery.** Rely on the build for minification and content-hashed, long-lived asset URLs — do not hand-minify source or check in minified copies (the vendor bundle is readable source and is minified at build). Never add response compression (gzip/brotli middleware or a compression plugin): the hosting edge compresses already, and double-compressing breaks clients. Keep images sized for their slot and lazy-load anything below the fold.
+
+### Agent readiness
+
+- Ship `public/llms.txt` (site summary + page links) alongside robots.txt and sitemap.xml, all using the real public domain.
+- Every public route's `head()` sets a self-referencing canonical link, `og:url`, and a Schema.org JSON-LD `WebPage` (home adds `WebSite` + `SoftwareSourceCode`).
+- Keep `<header>`, `<nav>`, `<main>`, `<footer>` landmarks in page shells.
+- Never block crawlers or AI agents at the host firewall for public pages.

@@ -1,3 +1,4 @@
+import { canonicalLinks, ogUrl, pageJsonLd } from "@/showcase/seo";
 import { createFileRoute } from "@tanstack/react-router";
 
 import showcaseCss from "@/showcase/showcase.css?url";
@@ -15,9 +16,11 @@ export const Route = createFileRoute("/delivery")({
       { property: "og:title", content: "Delivery & SSR — Awesome DS" },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
+      ogUrl("/delivery"),
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "stylesheet", href: showcaseCss }],
+    links: [{ rel: "stylesheet", href: showcaseCss }, ...canonicalLinks("/delivery")],
+    scripts: pageJsonLd("/delivery", "Delivery PAGE_TITLE SSR — Awesome DS"),
   }),
   component: DeliveryRoute,
 });
