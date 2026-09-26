@@ -1,3 +1,4 @@
+import { canonicalLinks, ogUrl, pageJsonLd } from "@/showcase/seo";
 import { createFileRoute } from "@tanstack/react-router";
 
 import showcaseCss from "@/showcase/showcase.css?url";
@@ -20,9 +21,11 @@ export const Route = createFileRoute("/icons")({
           "Search all 2,883 Font Awesome Free icons — solid, regular, and brands — and copy ready-to-use wa-icon markup.",
       },
       { property: "og:type", content: "website" },
+      ogUrl("/icons"),
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "stylesheet", href: showcaseCss }],
+    links: [{ rel: "stylesheet", href: showcaseCss }, ...canonicalLinks("/icons")],
+    scripts: pageJsonLd("/icons", PAGE_TITLE),
   }),
   component: IconsRoute,
 });

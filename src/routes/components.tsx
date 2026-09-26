@@ -1,3 +1,4 @@
+import { canonicalLinks, ogUrl, pageJsonLd } from "@/showcase/seo";
 import { createFileRoute } from "@tanstack/react-router";
 
 import showcaseCss from "@/showcase/showcase.css?url";
@@ -20,9 +21,11 @@ export const Route = createFileRoute("/components")({
           "All 70 Web Awesome elements with live variants, interaction states, realistic compositions, and copyable code.",
       },
       { property: "og:type", content: "website" },
+      ogUrl("/components"),
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "stylesheet", href: showcaseCss }],
+    links: [{ rel: "stylesheet", href: showcaseCss }, ...canonicalLinks("/components")],
+    scripts: pageJsonLd("/components", PAGE_TITLE),
   }),
   component: ComponentsRoute,
 });

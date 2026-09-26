@@ -1,3 +1,4 @@
+import { canonicalLinks, ogUrl, pageJsonLd } from "@/showcase/seo";
 import { createFileRoute } from "@tanstack/react-router";
 
 import showcaseCss from "@/showcase/showcase.css?url";
@@ -20,9 +21,11 @@ export const Route = createFileRoute("/scale")({
           "Spacing steps, corner radii, and elevation shadows — the named scales that keep every layout on rhythm.",
       },
       { property: "og:type", content: "website" },
+      ogUrl("/scale"),
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "stylesheet", href: showcaseCss }],
+    links: [{ rel: "stylesheet", href: showcaseCss }, ...canonicalLinks("/scale")],
+    scripts: pageJsonLd("/scale", PAGE_TITLE),
   }),
   component: ScaleRoute,
 });

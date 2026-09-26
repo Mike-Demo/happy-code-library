@@ -1,3 +1,4 @@
+import { canonicalLinks, ogUrl, pageJsonLd } from "@/showcase/seo";
 import { createFileRoute } from "@tanstack/react-router";
 
 import showcaseCss from "@/showcase/showcase.css?url";
@@ -16,9 +17,11 @@ export const Route = createFileRoute("/licenses")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
+      ogUrl("/licenses"),
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "stylesheet", href: showcaseCss }],
+    links: [{ rel: "stylesheet", href: showcaseCss }, ...canonicalLinks("/licenses")],
+    scripts: pageJsonLd("/licenses", PAGE_TITLE),
   }),
   component: LicensesRoute,
 });
