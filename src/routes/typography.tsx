@@ -25,7 +25,7 @@ export const Route = createFileRoute("/typography")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "stylesheet", href: showcaseCss }, ...canonicalLinks("/typography")],
-    scripts: pageJsonLd("/typography", PAGE_TITLE),
+    scripts: pageJsonLd("/typography", "Typography — Awesome DS"),
   }),
   component: TypographyRoute,
 });

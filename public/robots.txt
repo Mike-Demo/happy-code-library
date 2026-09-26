@@ -5,4 +5,5 @@ Allow: /
 Disallow: /__mockup/
 Disallow: /__component/
 
-Sitemap: https://happy-code-library.lovable.app/sitemap.xml
+# Site summary for AI agents: /llms.txt
+Sitemap: https://design.1.mikedemo.dev/sitemap.xml

@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "stylesheet", href: showcaseCss }, ...canonicalLinks("/")],
-    scripts: pageJsonLd("/", PAGE_TITLE),
+    scripts: pageJsonLd("/", "Awesome DS — Web Awesome Design System"),
   }),
   component: IndexRoute,
 });

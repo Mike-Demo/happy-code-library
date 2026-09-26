@@ -25,7 +25,7 @@ export const Route = createFileRoute("/colors")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "stylesheet", href: showcaseCss }, ...canonicalLinks("/colors")],
-    scripts: pageJsonLd("/colors", PAGE_TITLE),
+    scripts: pageJsonLd("/colors", "Colors — Awesome DS"),
   }),
   component: ColorsRoute,
 });

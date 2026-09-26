@@ -25,7 +25,7 @@ export const Route = createFileRoute("/icons")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "stylesheet", href: showcaseCss }, ...canonicalLinks("/icons")],
-    scripts: pageJsonLd("/icons", PAGE_TITLE),
+    scripts: pageJsonLd("/icons", "Icons — Awesome DS"),
   }),
   component: IconsRoute,
 });

@@ -21,7 +21,7 @@ export const Route = createFileRoute("/licenses")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "stylesheet", href: showcaseCss }, ...canonicalLinks("/licenses")],
-    scripts: pageJsonLd("/licenses", PAGE_TITLE),
+    scripts: pageJsonLd("/licenses", TITLE),
   }),
   component: LicensesRoute,
 });

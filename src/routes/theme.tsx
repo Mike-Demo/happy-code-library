@@ -20,7 +20,7 @@ export const Route = createFileRoute("/theme")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "stylesheet", href: showcaseCss }, ...canonicalLinks("/theme")],
-    scripts: pageJsonLd("/theme", PAGE_TITLE),
+    scripts: pageJsonLd("/theme", "Theme Editor — Awesome DS"),
   }),
   component: ThemeRoute,
 });
