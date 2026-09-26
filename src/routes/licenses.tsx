@@ -32,7 +32,20 @@ function LicensesRoute() {
       <LicensesPage
         lede="This design system is built on open source software and freely licensed artwork. Everything it depends on is credited below."
         backLabel="Back to overview"
-        groups={[{ title: "Open source libraries", entries: baseCredits }]}
+        groups={[
+          {
+            title: "Open source libraries",
+            entries: [
+              ...baseCredits,
+              {
+                name: "Zod",
+                author: "Colin McDonnell and contributors",
+                license: "MIT",
+                url: "https://github.com/colinhacks/zod/blob/main/LICENSE",
+              },
+            ],
+          },
+        ]}
       />
     </ShowcaseShell>
   );
