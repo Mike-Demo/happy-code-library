@@ -34,6 +34,18 @@ function LicensesRoute() {
         backLabel="Back to overview"
         groups={[
           {
+            title: "Source code",
+            entries: [
+              {
+                name: "Happy code library",
+                author: "Mike-Demo",
+                license: "See repository",
+                url: "https://github.com/Mike-Demo/happy-code-library",
+                note: "This site's source code is on GitHub — browse it, file issues, or contribute.",
+              },
+            ],
+          },
+          {
             title: "Open source libraries",
             entries: [
               ...baseCredits,
