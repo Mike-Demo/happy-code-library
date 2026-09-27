@@ -125,6 +125,7 @@ export function DeliveryPage(): ReactElement {
         id="modes"
         kicker="Delivery"
         title="Loading modes"
+        headingLevel={1}
         lede={`Every mode uses the same pinned releases — Web Awesome ${WEB_AWESOME_VERSION} and Font Awesome Free ${FONT_AWESOME_VERSION} — and the same components. Only where the JavaScript comes from, and whether server-rendered markup is hydrated, changes.`}
       >
         <div className="wa-grid ds-card-grid">

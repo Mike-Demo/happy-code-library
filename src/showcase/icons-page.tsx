@@ -47,7 +47,7 @@ function FamilyGrid({
   return (
     <div className="wa-stack wa-gap-s">
       <div className="wa-cluster wa-gap-s" style={{ alignItems: "center" }}>
-        <h3 className="ds-demo-title">{family.label}</h3>
+        <h2 className="ds-demo-title">{family.label}</h2>
         <wa-badge variant="neutral" appearance="outlined">
           {query ? matches.length + " of " + family.icons.length : String(family.icons.length)}
         </wa-badge>
@@ -109,6 +109,7 @@ export function IconsPage(): ReactElement {
       id="icons"
       kicker="Library"
       title="Iconography"
+      headingLevel={1}
       lede={
         "All " +
         TOTAL.toLocaleString() +

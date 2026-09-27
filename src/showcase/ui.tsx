@@ -40,16 +40,23 @@ interface SectionProps {
   title: string;
   lede?: string;
   children: ReactNode;
+  /**
+   * Heading level for the section title. Pages whose section title is the
+   * page's main heading pass 1 so every page has exactly one h1 and no
+   * levels are skipped. Defaults to 2.
+   */
+  headingLevel?: 1 | 2;
 }
 
 /** Full-bleed page section with a centered content column. */
-export function Section({ id, kicker, title, lede, children }: SectionProps): ReactElement {
+export function Section({ id, kicker, title, lede, children, headingLevel = 2 }: SectionProps): ReactElement {
+  const TitleTag = headingLevel === 1 ? "h1" : "h2";
   return (
     <section id={id} className="ds-section">
       <div className="ds-section-inner wa-stack wa-gap-xl">
         <header className="wa-stack wa-gap-2xs">
           <p className="ds-kicker">{kicker}</p>
-          <h2 className="ds-title">{title}</h2>
+          <TitleTag className="ds-title">{title}</TitleTag>
           {lede ? <p className="ds-lede">{lede}</p> : null}
         </header>
         {children}
@@ -61,13 +68,19 @@ export function Section({ id, kicker, title, lede, children }: SectionProps): Re
 interface DemoProps {
   title: string;
   children: ReactNode;
+  /**
+   * Heading level for the demo title. Pass 2 when the demo sits directly
+   * under a page-level h1 so the outline never skips a level. Defaults to 3.
+   */
+  headingLevel?: 2 | 3;
 }
 
 /** Titled specimen panel. */
-export function Demo({ title, children }: DemoProps): ReactElement {
+export function Demo({ title, children, headingLevel = 3 }: DemoProps): ReactElement {
+  const TitleTag = headingLevel === 2 ? "h2" : "h3";
   return (
     <div className="wa-stack wa-gap-s">
-      <h3 className="ds-demo-title">{title}</h3>
+      <TitleTag className="ds-demo-title">{title}</TitleTag>
       <div className="ds-demo wa-stack wa-gap-m">{children}</div>
     </div>
   );

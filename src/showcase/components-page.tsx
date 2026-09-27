@@ -169,6 +169,7 @@ export function ComponentsPage(): ReactElement {
       id="components"
       kicker="Library"
       title="Components"
+      headingLevel={1}
       lede={
         "Every custom element the system ships — " +
         COMPONENT_COUNT +

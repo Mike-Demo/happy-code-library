@@ -26,14 +26,15 @@ export function ColorsSection(): ReactElement {
       id="colors"
       kicker="Foundations"
       title="Color"
+      headingLevel={1}
       lede="Semantic groups pair a fill with a guaranteed-contrast on-color at three attention levels: quiet, normal, and loud. Always use these pairs instead of raw palette values."
     >
       <div className="wa-grid ds-swatch-grid wa-gap-l">
         {SEMANTIC_VARIANTS.map((variant) => (
           <div key={variant} className="wa-stack wa-gap-xs">
-            <h3 className="ds-demo-title" style={{ textTransform: "capitalize" }}>
+            <h2 className="ds-demo-title" style={{ textTransform: "capitalize" }}>
               {variant}
-            </h3>
+            </h2>
             {FILL_LEVELS.map((level) => (
               <div
                 key={level}
@@ -52,7 +53,7 @@ export function ColorsSection(): ReactElement {
         ))}
       </div>
 
-      <Demo title="Surfaces & text">
+      <Demo title="Surfaces & text" headingLevel={2}>
         <div className="wa-grid ds-swatch-grid wa-gap-m">
           {SURFACES.map((surface) => (
             <div
@@ -77,7 +78,7 @@ export function ColorsSection(): ReactElement {
         </div>
       </Demo>
 
-      <Demo title="Palette scales">
+      <Demo title="Palette scales" headingLevel={2}>
         <div className="wa-stack wa-gap-xs">
           {PALETTE_HUES.map((hue) => (
             <div key={hue} className="ds-palette-row">
@@ -114,9 +115,10 @@ export function TypographySection(): ReactElement {
       id="typography"
       kicker="Foundations"
       title="Typography"
+      headingLevel={1}
       lede="Families, a modular size scale, and named weights — all driven by --wa-font-* tokens so a single theme swap restyles every component."
     >
-      <Demo title="Families">
+      <Demo title="Families" headingLevel={2}>
         {FONT_FAMILIES.map((family) => (
           <div key={family.token} className="ds-row-grid">
             <span className="ds-row-label">font-family-{family.token}</span>
@@ -127,7 +129,7 @@ export function TypographySection(): ReactElement {
         ))}
       </Demo>
 
-      <Demo title="Size scale">
+      <Demo title="Size scale" headingLevel={2}>
         {FONT_SIZES.map((size) => (
           <div key={size} className="ds-row-grid">
             <span className="ds-row-label">font-size-{size}</span>
@@ -143,7 +145,7 @@ export function TypographySection(): ReactElement {
         ))}
       </Demo>
 
-      <Demo title="Weights">
+      <Demo title="Weights" headingLevel={2}>
         {FONT_WEIGHTS.map((weight) => (
           <div key={weight} className="ds-row-grid">
             <span className="ds-row-label">font-weight-{weight}</span>
@@ -167,9 +169,10 @@ export function ScaleSection(): ReactElement {
       id="scale"
       kicker="Foundations"
       title="Scale & depth"
+      headingLevel={1}
       lede="Spacing, corner radii, and elevation come from small named scales. Compose layouts with wa-stack, wa-cluster, and wa-grid plus wa-gap-* utilities."
     >
-      <Demo title="Spacing scale">
+      <Demo title="Spacing scale" headingLevel={2}>
         {SPACE_STEPS.map((step) => (
           <div key={step} className="ds-row-grid">
             <span className="ds-row-label">space-{step}</span>
@@ -179,7 +182,7 @@ export function ScaleSection(): ReactElement {
       </Demo>
 
       <div className="wa-grid wa-gap-l" style={{ alignItems: "start" }}>
-        <Demo title="Border radius">
+        <Demo title="Border radius" headingLevel={2}>
           <div className="wa-cluster wa-gap-l">
             {RADII.map((radius) => (
               <div key={radius} className="wa-stack wa-gap-2xs" style={{ textAlign: "center" }}>
@@ -193,7 +196,7 @@ export function ScaleSection(): ReactElement {
           </div>
         </Demo>
 
-        <Demo title="Shadows">
+        <Demo title="Shadows" headingLevel={2}>
           <div className="wa-cluster wa-gap-l">
             {SHADOWS.map((shadow) => (
               <div

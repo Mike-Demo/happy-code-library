@@ -14,6 +14,7 @@ export function ThemePage(): ReactElement {
       id="theme"
       kicker="Foundations"
       title="Theme editor"
+      headingLevel={1}
       lede="Retune the system's colors, type, spacing, and shape with controls instead of files. Changes apply to every page instantly and are remembered in this browser; saving writes them into the system's brand file as the shipped default."
     >
       <ThemeEditor
@@ -30,7 +31,7 @@ export function ThemePage(): ReactElement {
         </wa-callout>
       ) : null}
 
-      <Demo title="Live preview">
+      <Demo title="Live preview" headingLevel={2}>
         <div className="wa-stack wa-gap-m">
           <div className="wa-cluster wa-gap-xs">
             <wa-button variant="brand">Brand</wa-button>
@@ -47,7 +48,10 @@ export function ThemePage(): ReactElement {
           </div>
           <div className="wa-grid wa-gap-m" style={{ "--min-column-size": "16rem" } as never}>
             <wa-card>
-              <h4 slot="header">Card heading</h4>
+              {/* h3 (not h4): sits under the "Live preview" h2 in the outline. Inline size preserves the h4 look. */}
+              <h3 slot="header" style={{ fontSize: "1rem", marginBlock: "1.33em" }}>
+                Card heading
+              </h3>
               <p>
                 Body copy shows the type scale, the surface color, and the corner radius all at
                 once.
