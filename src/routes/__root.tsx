@@ -68,6 +68,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      // Bing Webmaster Tools site verification (account-level code).
+      { name: "msvalidate.01", content: "C46BBA52678FF98E0C7403B8F571606E" },
     ],
     links: [
       // Web Awesome + Font Awesome base styles and the anti-FOUCE utility
