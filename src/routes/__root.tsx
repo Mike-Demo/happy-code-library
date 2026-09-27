@@ -15,6 +15,70 @@ import {
 import themeCss from "../webawesome/theme.css?url";
 import appCss from "../styles.css?url";
 
+/**
+ * Content Security Policy delivered via meta tag (static hosting has no
+ * response-header control; frame-ancestors/report-uri are header-only and
+ * intentionally omitted).
+ *
+ * Third-party inventory (verified against the built page + source):
+ * - cdn.jsdelivr.net: Web Awesome + Font Awesome stylesheets (<link> in head),
+ *   Font Awesome webfonts (referenced by all.min.css), wa-icon SVG fetches
+ * - js.hcaptcha.com / *.hcaptcha.com: hCaptcha demo widget (script injected at
+ *   runtime on /components, renders an iframe, fetches challenge assets)
+ * - app.aikido.dev: Aikido badge image on /licenses
+ * - esm.sh: NOT allowed — the site ships the vendored Web Awesome bundle;
+ *   CDN mode exists only in docs strings and never executes
+ *
+ * 'unsafe-inline' on script-src/style-src is required: TanStack Start emits
+ * inline hydration/scroll-restoration bootstraps and JSON-LD blocks, and the
+ * markup uses style="" attributes (incl. the wa-include fragment).
+ */
+const CONTENT_SECURITY_POLICY = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' https://js.hcaptcha.com https://*.hcaptcha.com",
+  "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
+  "font-src 'self' https://cdn.jsdelivr.net",
+  "img-src 'self' data: https://app.aikido.dev https://*.hcaptcha.com",
+  "connect-src 'self' https://cdn.jsdelivr.net https://*.hcaptcha.com",
+  "frame-src https://js.hcaptcha.com https://*.hcaptcha.com",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "upgrade-insecure-requests",
+].join("; ");
+
+/**
+ * Content Security Policy delivered via meta tag (static hosting has no
+ * response-header control; frame-ancestors/report-uri are header-only and
+ * intentionally omitted).
+ *
+ * Third-party inventory (verified against the built page + source):
+ * - cdn.jsdelivr.net: Web Awesome + Font Awesome stylesheets (<link> in head),
+ *   Font Awesome webfonts (referenced by all.min.css), wa-icon SVG fetches
+ * - js.hcaptcha.com / *.hcaptcha.com: hCaptcha demo widget (script injected at
+ *   runtime on /components, renders an iframe, fetches challenge assets)
+ * - app.aikido.dev: Aikido badge image on /licenses
+ * - esm.sh: NOT allowed — the site ships the vendored Web Awesome bundle;
+ *   CDN mode exists only in docs strings and never executes
+ *
+ * 'unsafe-inline' on script-src/style-src is required: TanStack Start emits
+ * inline hydration/scroll-restoration bootstraps and JSON-LD blocks, and the
+ * markup uses style="" attributes (incl. the wa-include fragment).
+ */
+const CONTENT_SECURITY_POLICY = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' https://js.hcaptcha.com https://*.hcaptcha.com",
+  "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
+  "font-src 'self' https://cdn.jsdelivr.net",
+  "img-src 'self' data: https://app.aikido.dev https://*.hcaptcha.com",
+  "connect-src 'self' https://cdn.jsdelivr.net https://*.hcaptcha.com",
+  "frame-src https://js.hcaptcha.com https://*.hcaptcha.com",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "upgrade-insecure-requests",
+].join("; ");
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -54,6 +118,7 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={WEB_AWESOME_HTML_CLASSES}>
       <head>
+        <meta httpEquiv="Content-Security-Policy" content={CONTENT_SECURITY_POLICY} />
         <HeadContent />
       </head>
       <body>
@@ -71,10 +136,4 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
-  return (
-    <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
-    </QueryClientProvider>
-  );
-}
+  re
