@@ -1,0 +1,12 @@
+version = "0.5"
+last_updated = 2026-09-27
+
+[org]
+disclosures = [
+    { doc_type = "web-page", url = "https://design.1.mikedemo.dev/licenses", domain = "design.1.mikedemo.dev", title = "Carbon disclosure for Awesome DS" },
+]
+
+[upstream]
+services = [
+    { domain = "www.spacefast.com", service_type = "shared-hosting" },
+]
