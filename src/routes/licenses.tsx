@@ -59,6 +59,19 @@ function LicensesRoute() {
           },
         ]}
       />
+        <section className="wa-licenses wa-licenses-group" aria-label="Digital carbon">
+          <h2>Digital carbon</h2>
+          <p className="wa-licenses-lede">
+            Homepage transfer is about 137.4 KB, roughly 0.021 g of CO2 per visit.
+            Estimated with CO2.js using the Sustainable Web Design Model v4,
+            measured 2026-09-27. Hosting: SpaceFast, which is not currently
+            listed in the Green Web Foundation&apos;s green hosting dataset.
+            Machine-readable disclosure: {" "}
+            <a className="wa-licenses-entry-link" href="/carbon.txt">
+              /carbon.txt
+            </a>
+          </p>
+        </section>
     </ShowcaseShell>
   );
 }
