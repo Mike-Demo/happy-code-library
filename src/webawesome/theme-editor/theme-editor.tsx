@@ -210,10 +210,11 @@ function Group({
   return (
     <section className="wa-theme-editor__group wa-stack wa-gap-m">
       <div className="wa-split wa-gap-s wa-align-items-center">
-        <h3 className="wa-theme-editor__group-title wa-cluster wa-gap-2xs wa-align-items-center">
+        {/* h2: group titles sit directly under the page h1 in the outline */}
+        <h2 className="wa-theme-editor__group-title wa-cluster wa-gap-2xs wa-align-items-center">
           <WaIcon name={icon}></WaIcon>
           {title}
-        </h3>
+        </h2>
         <WaButton appearance="plain" size="small" onClick={onReset}>
           Reset
         </WaButton>
