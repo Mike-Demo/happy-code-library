@@ -179,6 +179,7 @@ export function ComponentsPage(): ReactElement {
       <div className="ds-comp-layout">
         <aside className="ds-comp-sidebar" aria-label="Component index">
           <wa-input
+            aria-label="Filter components"
             placeholder="Filter components…"
             size="s"
             with-clear

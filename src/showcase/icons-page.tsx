@@ -123,6 +123,7 @@ export function IconsPage(): ReactElement {
       ></wa-toast>
 
       <wa-input
+        aria-label={"Search " + TOTAL.toLocaleString() + " icons by name"}
         placeholder={"Search " + TOTAL.toLocaleString() + " icons by name\u2026"}
         with-clear
         size="l"
