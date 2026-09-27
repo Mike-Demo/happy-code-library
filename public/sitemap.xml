@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://design.1.mikedemo.dev/</loc></url>
-  <url><loc>https://design.1.mikedemo.dev/colors</loc></url>
-  <url><loc>https://design.1.mikedemo.dev/typography</loc></url>
-  <url><loc>https://design.1.mikedemo.dev/scale</loc></url>
-  <url><loc>https://design.1.mikedemo.dev/theme</loc></url>
-  <url><loc>https://design.1.mikedemo.dev/icons</loc></url>
-  <url><loc>https://design.1.mikedemo.dev/components</loc></url>
-  <url><loc>https://design.1.mikedemo.dev/delivery</loc></url>
-  <url><loc>https://design.1.mikedemo.dev/licenses</loc></url>
+  <url><loc>https://design.1.mikedemo.dev/</loc><lastmod>2026-09-27</lastmod></url>
+  <url><loc>https://design.1.mikedemo.dev/colors</loc><lastmod>2026-09-27</lastmod></url>
+  <url><loc>https://design.1.mikedemo.dev/typography</loc><lastmod>2026-09-27</lastmod></url>
+  <url><loc>https://design.1.mikedemo.dev/scale</loc><lastmod>2026-09-27</lastmod></url>
+  <url><loc>https://design.1.mikedemo.dev/theme</loc><lastmod>2026-09-27</lastmod></url>
+  <url><loc>https://design.1.mikedemo.dev/icons</loc><lastmod>2026-09-27</lastmod></url>
+  <url><loc>https://design.1.mikedemo.dev/components</loc><lastmod>2026-09-27</lastmod></url>
+  <url><loc>https://design.1.mikedemo.dev/delivery</loc><lastmod>2026-09-27</lastmod></url>
+  <url><loc>https://design.1.mikedemo.dev/licenses/</loc><lastmod>2026-09-27</lastmod></url>
 </urlset>
