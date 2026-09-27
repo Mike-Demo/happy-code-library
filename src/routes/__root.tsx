@@ -26,6 +26,7 @@ import appCss from "../styles.css?url";
  * - js.hcaptcha.com / *.hcaptcha.com: hCaptcha demo widget (script injected at
  *   runtime on /components, renders an iframe, fetches challenge assets)
  * - app.aikido.dev: Aikido badge image on /licenses
+ * - umami-lite.view.fast: private analytics tracker (script + event endpoint)
  * - esm.sh: NOT allowed — the site ships the vendored Web Awesome bundle;
  *   CDN mode exists only in docs strings and never executes
  *
@@ -35,11 +36,11 @@ import appCss from "../styles.css?url";
  */
 const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://js.hcaptcha.com https://*.hcaptcha.com",
+  "script-src 'self' 'unsafe-inline' https://js.hcaptcha.com https://*.hcaptcha.com https://umami-lite.view.fast",
   "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
   "font-src 'self' https://cdn.jsdelivr.net",
   "img-src 'self' data: https://app.aikido.dev https://*.hcaptcha.com",
-  "connect-src 'self' https://cdn.jsdelivr.net https://*.hcaptcha.com",
+  "connect-src 'self' https://cdn.jsdelivr.net https://*.hcaptcha.com https://umami-lite.view.fast",
   "frame-src https://js.hcaptcha.com https://*.hcaptcha.com",
   "object-src 'none'",
   "base-uri 'self'",
@@ -88,6 +89,7 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en" className={WEB_AWESOME_HTML_CLASSES}>
       <head>
         <meta httpEquiv="Content-Security-Policy" content={CONTENT_SECURITY_POLICY} />
+        <script defer src="https://umami-lite.view.fast/tracker.js" data-website-id="d641c405-88d7-4b58-9967-1947b733d0df"></script>
         <HeadContent />
       </head>
       <body>
