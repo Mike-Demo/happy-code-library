@@ -178,17 +178,17 @@ export function ComponentsPage(): ReactElement {
     >
       <div className="ds-comp-layout">
         <aside className="ds-comp-sidebar" aria-label="Component index">
-          <wa-input
+          <WaInput
             aria-label="Filter components"
             placeholder="Filter components…"
             size="s"
             with-clear
-            ref={(element: WaInput | null) => {
+            ref={(element: HTMLElement | null) => {
               searchRef.current = element;
             }}
           >
-            <wa-icon slot="start" name="magnifying-glass"></wa-icon>
-          </wa-input>
+            <WaIcon slot="start" name="magnifying-glass" />
+          </WaInput>
           <nav className="ds-comp-index wa-stack wa-gap-3xs">
             {filteredGroups.length === 0 ? (
               <p className="ds-quiet">Nothing matches "{query}".</p>
