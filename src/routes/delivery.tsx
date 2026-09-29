@@ -20,7 +20,7 @@ export const Route = createFileRoute("/delivery")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "stylesheet", href: showcaseCss }, ...canonicalLinks("/delivery")],
-    scripts: pageJsonLd("/delivery", "Delivery PAGE_TITLE SSR — Awesome DS"),
+    scripts: pageJsonLd("/delivery", "Delivery & SSR — Awesome DS"),
   }),
   component: DeliveryRoute,
 });

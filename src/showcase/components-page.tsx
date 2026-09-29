@@ -1,7 +1,9 @@
 // Components page: full gallery with searchable sidebar. Preview-only.
 import { useMemo, useRef, useState, type ReactElement } from "react";
 
-import type WaInput from "@awesome.me/webawesome/dist/components/input/input.js";
+import type WaInputElement from "@awesome.me/webawesome/dist/components/input/input.js";
+
+import { WaIcon, WaInput } from "@/webawesome/react";
 
 import { COMPONENT_COUNT, COMPONENT_GROUPS } from "./component-registry";
 import { Section, useWaEvent } from "./ui";
@@ -140,7 +142,7 @@ const DOCS: Record<string, () => ReactElement> = {
 };
 
 export function ComponentsPage(): ReactElement {
-  const searchRef = useRef<WaInput | null>(null);
+  const searchRef = useRef<WaInputElement | null>(null);
   const [query, setQuery] = useState("");
 
   useWaEvent(searchRef, ["input", "wa-clear"], () => {
@@ -178,17 +180,17 @@ export function ComponentsPage(): ReactElement {
     >
       <div className="ds-comp-layout">
         <aside className="ds-comp-sidebar" aria-label="Component index">
-          <wa-input
+          <WaInput
             aria-label="Filter components"
             placeholder="Filter components…"
             size="s"
             with-clear
-            ref={(element: WaInput | null) => {
-              searchRef.current = element;
+            ref={(element: HTMLElement | null) => {
+              searchRef.current = element as WaInputElement | null;
             }}
           >
-            <wa-icon slot="start" name="magnifying-glass"></wa-icon>
-          </wa-input>
+            <WaIcon slot="start" name="magnifying-glass" />
+          </WaInput>
           <nav className="ds-comp-index wa-stack wa-gap-3xs">
             {filteredGroups.length === 0 ? (
               <p className="ds-quiet">Nothing matches "{query}".</p>

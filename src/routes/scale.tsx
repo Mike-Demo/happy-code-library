@@ -25,7 +25,7 @@ export const Route = createFileRoute("/scale")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "stylesheet", href: showcaseCss }, ...canonicalLinks("/scale")],
-    scripts: pageJsonLd("/scale", "Scale PAGE_TITLE Depth — Awesome DS"),
+    scripts: pageJsonLd("/scale", "Scale & Depth — Awesome DS"),
   }),
   component: ScaleRoute,
 });
