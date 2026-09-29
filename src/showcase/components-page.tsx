@@ -140,7 +140,7 @@ const DOCS: Record<string, () => ReactElement> = {
 };
 
 export function ComponentsPage(): ReactElement {
-  const searchRef = useRef<WaInput | null>(null);
+  const searchRef = useRef<HTMLElement | null>(null);
   const [query, setQuery] = useState("");
 
   useWaEvent(searchRef, ["input", "wa-clear"], () => {
