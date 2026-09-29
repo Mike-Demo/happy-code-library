@@ -1,6 +1,8 @@
 // Components page: full gallery with searchable sidebar. Preview-only.
 import { useMemo, useRef, useState, type ReactElement } from "react";
 
+import type WaInputElement from "@awesome.me/webawesome/dist/components/input/input.js";
+
 import { WaIcon, WaInput } from "@/webawesome/react";
 
 import { COMPONENT_COUNT, COMPONENT_GROUPS } from "./component-registry";
