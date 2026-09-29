@@ -142,7 +142,7 @@ const DOCS: Record<string, () => ReactElement> = {
 };
 
 export function ComponentsPage(): ReactElement {
-  const searchRef = useRef<HTMLElement | null>(null);
+  const searchRef = useRef<WaInputElement | null>(null);
   const [query, setQuery] = useState("");
 
   useWaEvent(searchRef, ["input", "wa-clear"], () => {
@@ -186,7 +186,7 @@ export function ComponentsPage(): ReactElement {
             size="s"
             with-clear
             ref={(element: HTMLElement | null) => {
-              searchRef.current = element;
+              searchRef.current = element as WaInputElement | null;
             }}
           >
             <WaIcon slot="start" name="magnifying-glass" />
