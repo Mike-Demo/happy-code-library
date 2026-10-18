@@ -1,0 +1,223 @@
+{
+  "boltSlidesVersion": 1,
+  "boltSlidesId": "11011050-f9d6-4d43-8a9e-3e43af51bbaf",
+  "deck": {
+    "title": "Happy Code Library",
+    "transition": "fade",
+    "font": "manrope",
+    "accent": "#FFD338"
+  },
+  "slides": [
+    {
+      "id": "s1",
+      "position": 0,
+      "layout": "cover",
+      "props": {
+        "kicker": "github.com/Mike-Demo/happy-code-library",
+        "title": "Happy ==Code== Library",
+        "subtitle": "Code that makes you smile — and teaches while it does.",
+        "foot": "A browsable library of small, joyful code examples"
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Open warm. This is a library of tiny code examples designed to spark delight — the point of this deck is that delight is a teaching strategy, not decoration.",
+      "status": "none"
+    },
+    {
+      "id": "s2",
+      "position": 1,
+      "layout": "statement",
+      "props": {
+        "kicker": "The problem",
+        "title": "Example code is too often ==dry==, intimidating, or buried.",
+        "body": "Beginners bounce off walls of terse snippets. And even experienced developers learn better from examples that spark a little delight."
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "fade",
+      "transition": null,
+      "nav": null,
+      "notes": "Land the pain: nobody curls up with API reference code. When examples feel like homework, learners stop — and that's true at every skill level.",
+      "status": "none"
+    },
+    {
+      "id": "s3",
+      "position": 2,
+      "layout": "pillars",
+      "props": {
+        "title": "What it is: ==bite-size==, runnable, joyful.",
+        "items": [
+          {
+            "title": "Small enough to finish",
+            "body": "Every example reads in about a minute — one idea, no scaffolding to wade through."
+          },
+          {
+            "title": "Playful enough to remember",
+            "body": "A little humor and personality make the pattern stick long after the tab is closed."
+          },
+          {
+            "title": "Annotated to teach",
+            "body": "Each snippet explains the lesson alongside the code, so the takeaway travels with you."
+          }
+        ]
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Three commitments: short, fun, annotated. Curated — every example earns its place. That curation is what separates a library from a snippet dump.",
+      "status": "none"
+    },
+    {
+      "id": "s4",
+      "position": 3,
+      "layout": "steps",
+      "props": {
+        "kicker": "How it works",
+        "title": "From browsing to ==borrowing== in four steps.",
+        "items": [
+          {
+            "title": "Browse by topic or mood",
+            "body": "Pick a subject — or pick a feeling. \"Feeling playful\" is a valid search query."
+          },
+          {
+            "title": "Open an example",
+            "body": "One small, runnable snippet with its annotations — nothing else on the page."
+          },
+          {
+            "title": "Read the happy path",
+            "body": "See the one clean way the idea works, with the lesson written next to it."
+          },
+          {
+            "title": "Take the pattern with you",
+            "body": "Copy it, remix it, ship it. The pattern is yours now."
+          }
+        ]
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Walk the loop quickly — the mood-browsing detail is the memorable one. The happy path framing is deliberate: we show the one clean way, not every edge case.",
+      "status": "none"
+    },
+    {
+      "id": "s5",
+      "position": 4,
+      "layout": "contrast",
+      "props": {
+        "kicker": "Why happy matters",
+        "title": "==Delight== is a teaching tool.",
+        "left": {
+          "label": "Typical examples",
+          "title": "Dry and dense",
+          "points": [
+            "Skimmed, then closed",
+            "Forgotten by tomorrow",
+            "Feels like homework",
+            "Never shared"
+          ]
+        },
+        "right": {
+          "label": "Happy examples",
+          "title": "Small and joyful",
+          "points": [
+            "Finished, start to end",
+            "Shared with a friend",
+            "Remembered weeks later",
+            "Built upon and remixed"
+          ]
+        }
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "The core argument: examples people enjoy are examples people finish, share, and build on. Joy isn't garnish — it's the mechanism that gets the lesson to stick.",
+      "status": "none"
+    },
+    {
+      "id": "s6",
+      "position": 5,
+      "layout": "bento",
+      "props": {
+        "kicker": "Key features",
+        "title": "Everything you need, ==nothing== you don't.",
+        "tiles": [
+          {
+            "k": "01",
+            "title": "Runnable",
+            "body": "Copy, paste, run. Every example works as shown.",
+            "c": 2
+          },
+          {
+            "k": "02",
+            "title": "Annotated",
+            "body": "The lesson is written right beside the code.",
+            "c": 2
+          },
+          {
+            "k": "03",
+            "title": "Mood-browsable",
+            "body": "Find examples by topic — or by how you want to feel.",
+            "c": 2,
+            "variant": "accent"
+          },
+          {
+            "k": "04",
+            "title": "Tiny by design",
+            "body": "One-minute reads. One idea per example.",
+            "c": 3
+          },
+          {
+            "k": "05",
+            "title": "Made to share",
+            "body": "Link an example, send it to a friend, fork it freely.",
+            "c": 3
+          }
+        ]
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "Hit the highlights: runnable, annotated, browsable by mood, tiny, shareable. The constraint is the feature — smallness is what keeps people reading.",
+      "status": "none"
+    },
+    {
+      "id": "s7",
+      "position": 6,
+      "layout": "bigNumber",
+      "props": {
+        "kicker": "Status",
+        "value": "100%",
+        "caption": "open source — a growing library, built in the open and better with every contribution",
+        "foot": "github.com/Mike-Demo/happy-code-library"
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": null,
+      "nav": null,
+      "notes": "The library is live and growing, fully open source. Invite the audience: the best way to get the example you wish existed is to add it.",
+      "status": "none"
+    },
+    {
+      "id": "s8",
+      "position": 7,
+      "layout": "cover",
+      "props": {
+        "kicker": "Happy Code Library",
+        "title": "Go write something that ==smiles== back.",
+        "subtitle": "Browse the library, borrow a pattern, leave one behind.",
+        "foot": "github.com/Mike-Demo/happy-code-library"
+      },
+      "background": { "type": "color", "color": "var(--bg)" },
+      "animation": "cascade",
+      "transition": "zoom",
+      "nav": null,
+      "notes": "Close with the call to action: visit the repo, find one example that makes you smile, and pass it on. Contributions welcome.",
+      "status": "none"
+    }
+  ]
+}
