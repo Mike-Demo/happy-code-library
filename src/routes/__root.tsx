@@ -39,7 +39,7 @@ const CONTENT_SECURITY_POLICY = [
   "script-src 'self' 'unsafe-inline' https://js.hcaptcha.com https://*.hcaptcha.com https://umami-lite.view.fast",
   "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
   "font-src 'self' https://cdn.jsdelivr.net",
-  "img-src 'self' data: https://app.aikido.dev https://*.hcaptcha.com",
+  "img-src 'self' data: https://app.aikido.dev https://*.hcaptcha.com https://brandmylaptop.com",
   "connect-src 'self' https://cdn.jsdelivr.net https://*.hcaptcha.com https://umami-lite.view.fast",
   "frame-src https://js.hcaptcha.com https://*.hcaptcha.com",
   "object-src 'none'",
