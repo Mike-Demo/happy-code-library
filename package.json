@@ -17,9 +17,9 @@
   },
   "dependencies": {
     "@tanstack/react-query": "5.101.1",
-    "@tanstack/react-router": "1.170.16",
-    "@tanstack/react-start": "1.168.26",
-    "@tanstack/router-plugin": "1.168.18",
+    "@tanstack/react-router": "1.170.41",
+    "@tanstack/react-start": "1.168.60",
+    "@tanstack/router-plugin": "1.168.42",
     "react": "19.2.7",
     "react-dom": "19.2.7",
     "zod": "3.25.76"
@@ -27,8 +27,9 @@
   "devDependencies": {
     "@awesome.me/webawesome": "3.12.0",
     "@eslint/js": "^9.32.0",
-    "vite-tsconfig-paths": "6.1.1",
     "@fortawesome/fontawesome-free": "7.3.1",
+    "@lovable.dev/vite-plugin-dev-server-bridge": "^1.0.2",
+    "@lovable.dev/vite-plugin-hmr-gate": "^1.8.3",
     "@types/node": "^22.16.5",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
@@ -40,6 +41,7 @@
     "lovable-tagger": "^1.2.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
-    "vite": "^8.0.16"
+    "vite": "^8.0.16",
+    "vite-tsconfig-paths": "6.1.1"
   }
 }
